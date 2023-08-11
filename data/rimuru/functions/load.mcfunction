@@ -20,6 +20,7 @@ scoreboard objectives add rimuru_math dummy
 scoreboard players set .rimuru4 rimuru_math 4
 scoreboard players set .rimuru3 rimuru_math 3
 scoreboard players set .rimuru2 rimuru_math 2
+scoreboard players set .rimuru0 rimuru_math 0
 scale reset @s
 advancement revoke @s everything
 team add noDeathMessage
