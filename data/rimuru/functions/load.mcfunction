@@ -1,4 +1,3 @@
-scoreboard objectives add rimuru_selected dummy
 #id system related
 scoreboard objectives add rimuru_id dummy
 scoreboard players set $total rimuru_id 1
@@ -133,7 +132,17 @@ scoreboard objectives add rimuru_sm29 dummy
 scoreboard objectives add rimuru_sm30 dummy
 scoreboard objectives add rimuru_dc trigger
 #switch and skill order related
+scoreboard objectives add rimuru_switch_nb dummy
+scoreboard objectives add rimuru_switch_selected dummy
 scoreboard objectives add rimuru_switch_temp dummy
+#one per skill has the order the skill is in
+scoreboard objectives add rimuru_skill_great_sage dummy
+scoreboard objectives add rimuru_skill_predator dummy
+scoreboard objectives add rimuru_skill_steel_strength dummy
+scoreboard objectives add rimuru_skill_sticky_steel_thread dummy
+scoreboard objectives add rimuru_skill_sense_heat_source dummy
+scoreboard objectives add rimuru_skill_flight dummy
+scoreboard objectives add rimuru_skill_paralyzing_breath dummy
 scoreboard objectives add rimuru_skill_body_armor dummy
 scoreboard objectives add rimuru_skill_metamorph dummy
 scoreboard objectives add rimuru_skill_ultrasonic_waves dummy
