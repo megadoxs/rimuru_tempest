@@ -22,6 +22,13 @@
                                     "min": 1
                                 }
                             }
+                        },
+                        {
+                            "condition": "minecraft:entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "nbt": "{cardinal_components:{\"apoli:powers\":{Powers:[{Type:\"rimuru:extra_skills_bk\",Data:1}]}}}"
+                            }
                         }
                     ]
                 },

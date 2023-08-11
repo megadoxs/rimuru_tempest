@@ -19,31 +19,8 @@
     "power": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:if_else",
-            "condition": {
-                "type": "origins:command",
-                "command": "execute if score @s rimuru_predator_random matches 100",
-                "comparison": "==",
-                "compare_to": 0
-            },
-            "if_action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "*:switch_nb_skill",
-                        "change": 1
-                    },
-                    {
-                        "type": "origins:execute_command",
-                        "command": "function rimuru:switch/give_order"
-                    },
-                    {
-                        "type": "origins:execute_command",
-                        "command": "function rimuru:predator/powers"
-                    }
-                ]
-            }
+            "type": "origins:execute_command",
+            "command": "function rimuru:predator/powers"
         },
         "condition": {
             "type": "origins:and",

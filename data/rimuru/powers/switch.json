@@ -28,8 +28,20 @@
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:predicate",
-                        "predicate": "rimuru:switch/switch_bar"
+                        "type": "origins:gamemode",
+                        "gamemode": "survival"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_skill",
+                        "comparison": "==",
+                        "compare_to": 0
                     },
                     {
                         "type": "origins:resource",
@@ -47,12 +59,26 @@
         "max": 2,
         "hud_render": {
             "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 19,
             "condition": {
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:predicate",
-                        "predicate": "rimuru:switch/switch_bar"
+                        "type": "origins:gamemode",
+                        "gamemode": "survival"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_skill",
+                        "comparison": "==",
+                        "compare_to": 0
                     },
                     {
                         "type": "origins:resource",
@@ -70,12 +96,26 @@
         "max": 3,
         "hud_render": {
             "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 19,
             "condition": {
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:predicate",
-                        "predicate": "rimuru:switch/switch_bar"
+                        "type": "origins:gamemode",
+                        "gamemode": "survival"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_skill",
+                        "comparison": "==",
+                        "compare_to": 0
                     },
                     {
                         "type": "origins:resource",
@@ -93,12 +133,26 @@
         "max": 4,
         "hud_render": {
             "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 19,
             "condition": {
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:predicate",
-                        "predicate": "rimuru:switch/switch_bar"
+                        "type": "origins:gamemode",
+                        "gamemode": "survival"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_skill",
+                        "comparison": "==",
+                        "compare_to": 0
                     },
                     {
                         "type": "origins:resource",
@@ -116,12 +170,26 @@
         "max": 5,
         "hud_render": {
             "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 19,
             "condition": {
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:predicate",
-                        "predicate": "rimuru:switch/switch_bar"
+                        "type": "origins:gamemode",
+                        "gamemode": "survival"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_skill",
+                        "comparison": "==",
+                        "compare_to": 0
                     },
                     {
                         "type": "origins:resource",
@@ -139,12 +207,26 @@
         "max": 6,
         "hud_render": {
             "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 19,
             "condition": {
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:predicate",
-                        "predicate": "rimuru:switch/switch_bar"
+                        "type": "origins:gamemode",
+                        "gamemode": "survival"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_skill",
+                        "comparison": "==",
+                        "compare_to": 0
                     },
                     {
                         "type": "origins:resource",
@@ -162,12 +244,26 @@
         "max": 7,
         "hud_render": {
             "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 19,
             "condition": {
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:predicate",
-                        "predicate": "rimuru:switch/switch_bar"
+                        "type": "origins:gamemode",
+                        "gamemode": "survival"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_skill",
+                        "comparison": "==",
+                        "compare_to": 0
                     },
                     {
                         "type": "origins:resource",
@@ -185,12 +281,26 @@
         "max": 8,
         "hud_render": {
             "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 19,
             "condition": {
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:predicate",
-                        "predicate": "rimuru:switch/switch_bar"
+                        "type": "origins:gamemode",
+                        "gamemode": "survival"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_skill",
+                        "comparison": "==",
+                        "compare_to": 0
                     },
                     {
                         "type": "origins:resource",
@@ -208,12 +318,26 @@
         "max": 9,
         "hud_render": {
             "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 19,
             "condition": {
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:predicate",
-                        "predicate": "rimuru:switch/switch_bar"
+                        "type": "origins:gamemode",
+                        "gamemode": "survival"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_skill",
+                        "comparison": "==",
+                        "compare_to": 0
                     },
                     {
                         "type": "origins:resource",
@@ -231,12 +355,26 @@
         "max": 10,
         "hud_render": {
             "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 19,
             "condition": {
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:predicate",
-                        "predicate": "rimuru:switch/switch_bar"
+                        "type": "origins:gamemode",
+                        "gamemode": "survival"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_skill",
+                        "comparison": "==",
+                        "compare_to": 0
                     },
                     {
                         "type": "origins:resource",
@@ -254,12 +392,26 @@
         "max": 11,
         "hud_render": {
             "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 19,
             "condition": {
                 "type": "origins:and",
                 "conditions": [
                     {
-                        "type": "origins:predicate",
-                        "predicate": "rimuru:switch/switch_bar"
+                        "type": "origins:gamemode",
+                        "gamemode": "survival"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_skill",
+                        "comparison": "==",
+                        "compare_to": 0
                     },
                     {
                         "type": "origins:resource",
@@ -277,150 +429,8 @@
             "key": "key.origins.secondary_active"
         },
         "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:if_else_list",
-                    "actions": [
-                        {
-                            "condition": {
-                                "type": "origins:resource",
-                                "resource": "*:*_nb_skill",
-                                "comparison": "==",
-                                "compare_to": 0
-                            },
-                            "action": {
-                                "type": "origins:execute_command",
-                                "command": "function rimuru/switch_default"
-                            }
-                        },
-                        {
-                            "condition": {
-                                "type": "origins:resource",
-                                "resource": "*:*_nb_skill",
-                                "comparison": "==",
-                                "compare_to": 1
-                            },
-                            "action": {
-                                "type": "origins:execute_command",
-                                "command": "function rimuru/switch_1_skill"
-                            }
-                        },
-                        {
-                            "condition": {
-                                "type": "origins:resource",
-                                "resource": "*:*_nb_skill",
-                                "comparison": "==",
-                                "compare_to": 2
-                            },
-                            "action": {
-                                "type": "origins:execute_command",
-                                "command": "function rimuru/switch_2_skill"
-                            }
-                        },
-                        {
-                            "condition": {
-                                "type": "origins:resource",
-                                "resource": "*:*_nb_skill",
-                                "comparison": "==",
-                                "compare_to": 3
-                            },
-                            "action": {
-                                "type": "origins:execute_command",
-                                "command": "function rimuru/switch_3_skill"
-                            }
-                        },
-                        {
-                            "condition": {
-                                "type": "origins:resource",
-                                "resource": "*:*_nb_skill",
-                                "comparison": "==",
-                                "compare_to": 4
-                            },
-                            "action": {
-                                "type": "origins:execute_command",
-                                "command": "function rimuru/switch_4_skill"
-                            }
-                        },
-                        {
-                            "condition": {
-                                "type": "origins:resource",
-                                "resource": "*:*_nb_skill",
-                                "comparison": "==",
-                                "compare_to": 5
-                            },
-                            "action": {
-                                "type": "origins:execute_command",
-                                "command": "function rimuru/switch_5_skill"
-                            }
-                        },
-                        {
-                            "condition": {
-                                "type": "origins:resource",
-                                "resource": "*:*_nb_skill",
-                                "comparison": "==",
-                                "compare_to": 6
-                            },
-                            "action": {
-                                "type": "origins:execute_command",
-                                "command": "function rimuru/switch_6_skill"
-                            }
-                        },
-                        {
-                            "condition": {
-                                "type": "origins:resource",
-                                "resource": "*:*_nb_skill",
-                                "comparison": "==",
-                                "compare_to": 7
-                            },
-                            "action": {
-                                "type": "origins:execute_command",
-                                "command": "function rimuru/switch_7_skill"
-                            }
-                        },
-                        {
-                            "condition": {
-                                "type": "origins:resource",
-                                "resource": "*:*_nb_skill",
-                                "comparison": "==",
-                                "compare_to": 8
-                            },
-                            "action": {
-                                "type": "origins:execute_command",
-                                "command": "function rimuru/switch_8_skill"
-                            }
-                        },
-                        {
-                            "condition": {
-                                "type": "origins:resource",
-                                "resource": "*:*_nb_skill",
-                                "comparison": "==",
-                                "compare_to": 9
-                            },
-                            "action": {
-                                "type": "origins:execute_command",
-                                "command": "function rimuru/switch_9_skill"
-                            }
-                        },
-                        {
-                            "condition": {
-                                "type": "origins:resource",
-                                "resource": "*:*_nb_skill",
-                                "comparison": "==",
-                                "compare_to": 10
-                            },
-                            "action": {
-                                "type": "origins:execute_command",
-                                "command": "function rimuru/switch_10_skill"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "function rimuru/switch_afficher"
-                }
-            ]
+            "type": "origins:execute_command",
+            "command": "function rimuru:switch/switcher"
         }
     }
 }
