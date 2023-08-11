@@ -1,9 +1,8 @@
 # grant the power to ish just gives them the condition to use the power 
-execute unless score @s rimuru_predator_random matches 100 if score @s rimuru_predator_fail >= .rimuru0 rimuru_math run loot spawn ~ ~ ~ loot rimuru:predator/skill_fail
-execute unless score @s rimuru_predator_random matches 100 if score @s rimuru_predator_fail >= .rimuru0 rimuru_math store result score @s rimuru_predator_fail run data get entity @e[nbt={Item:{tag:{skill_fail:1b}}},limit=1] Item.Count
-execute unless score @s rimuru_predator_random matches 100 if score @s rimuru_predator_fail >= .rimuru0 rimuru_math run kill @e[nbt={Item:{tag:{skill_fail:1b}}}]
-execute unless score @s rimuru_predator_random matches 100 unless score @s rimuru_predator_random matches 1 if score @s rimuru_predator_fail >= .rimuru0 rimuru_math run resource change @s rimuru:switch_nb_skill 1
-scoreboard players add @s rimuru_predator_fail 0
+execute unless score @s rimuru_predator_random matches 100 run loot spawn ~ ~ ~ loot rimuru:predator/skill_fail
+execute unless score @s rimuru_predator_random matches 100 store result score @s rimuru_predator_fail run data get entity @e[nbt={Item:{tag:{skill_fail:1b}}},limit=1] Item.Count
+execute unless score @s rimuru_predator_random matches 100 run kill @e[nbt={Item:{tag:{skill_fail:1b}}}]
+execute unless score @s rimuru_predator_random matches 100 unless score @s rimuru_predator_random matches 1 if score @s rimuru_predator_fail matches 1 run resource change @s rimuru:switch_nb_skill 1
 execute if score @s rimuru_predator_random matches 1 if score @s rimuru_predator_fail matches 1 run resource set @s extra_skills_dk 1
 execute if score @s rimuru_predator_random matches 2 if score @s rimuru_predator_fail matches 1 run resource set @s commons_skill_bk 1
 execute if score @s rimuru_predator_random matches 3 if score @s rimuru_predator_fail matches 1 run resource set @s commons_skills_csk 1
@@ -41,17 +40,17 @@ execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"ri
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:switch_nb_skill",Data:9}]}}}] run scoreboard players set @s rimuru_switch_temp 10
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:switch_nb_skill",Data:10}]}}}] run scoreboard players set @s rimuru_switch_temp 11
 # for the order of the skill
-execute if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_dk",Data:1}]}}}] rimuru_predator_random matches 1 run scoreboard players operation @s rimuru_skill_creative_flight = @s rimuru_skill_flight
-execute if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"commons_skill_bk",Data:1}]}}}] rimuru_predator_random matches 2 run scoreboard players operation @s rimuru_skill_ultrasonic_waves = @s rimuru_switch_temp
-execute if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skills_csk",Data:1}]}}}] rimuru_predator_random matches 3 run scoreboard players operation @s rimuru_skill_poisonous_breath = @s rimuru_switch_temp
-execute if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:waypoints_ek",Data:1}]}}}] rimuru_predator_random matches 4 run scoreboard players operation @s rimuru_skill_waypoints = @s rimuru_switch_temp
-execute if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_sk",Data:1}]}}}] rimuru_predator_random matches 5 run scoreboard players operation @s rimuru_skill_sticky_steel_thread = @s rimuru_switch_temp
-execute if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_gk",Data:1}]}}}] rimuru_predator_random matches 6 run scoreboard players operation @s rimuru_skill_sense_heat_source = @s rimuru_switch_temp
-execute if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_vk",Data:1}]}}}] rimuru_predator_random matches 7 run scoreboard players operation @s rimuru_skill_steel_strength = @s rimuru_switch_temp
-execute if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_bk",Data:1}]}}}] rimuru_predator_random matches 8 run scoreboard players operation @s rimuru_skill_flight = @s rimuru_switch_temp
-execute if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skills_tk",Data:1}]}}}] rimuru_predator_random matches 9 run scoreboard players operation @s rimuru_skill_paralyzing_breath = @s rimuru_switch_temp
-execute if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skills_lmck",Data:1}]}}}] rimuru_predator_random matches 10 run scoreboard players operation @s rimuru_skill_body_armor = @s rimuru_switch_temp
-execute if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:isekai_h_k",Data:1}]}}}] rimuru_predator_random matches 11 run scoreboard players operation @s rimuru_skill_metamorph = @s rimuru_switch_temp
+execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_dk",Data:1}]}}}] rimuru_predator_random matches 1 run scoreboard players operation @s rimuru_skill_creative_flight = @s rimuru_skill_flight
+execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"commons_skill_bk",Data:1}]}}}] rimuru_predator_random matches 2 run scoreboard players operation @s rimuru_skill_ultrasonic_waves = @s rimuru_switch_temp
+execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skills_csk",Data:1}]}}}] rimuru_predator_random matches 3 run scoreboard players operation @s rimuru_skill_poisonous_breath = @s rimuru_switch_temp
+execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:waypoints_ek",Data:1}]}}}] rimuru_predator_random matches 4 run scoreboard players operation @s rimuru_skill_waypoints = @s rimuru_switch_temp
+execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_sk",Data:1}]}}}] rimuru_predator_random matches 5 run scoreboard players operation @s rimuru_skill_sticky_steel_thread = @s rimuru_switch_temp
+execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_gk",Data:1}]}}}] rimuru_predator_random matches 6 run scoreboard players operation @s rimuru_skill_sense_heat_source = @s rimuru_switch_temp
+execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_vk",Data:1}]}}}] rimuru_predator_random matches 7 run scoreboard players operation @s rimuru_skill_steel_strength = @s rimuru_switch_temp
+execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_bk",Data:1}]}}}] rimuru_predator_random matches 8 run scoreboard players operation @s rimuru_skill_flight = @s rimuru_switch_temp
+execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skills_tk",Data:1}]}}}] rimuru_predator_random matches 9 run scoreboard players operation @s rimuru_skill_paralyzing_breath = @s rimuru_switch_temp
+execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skills_lmck",Data:1}]}}}] rimuru_predator_random matches 10 run scoreboard players operation @s rimuru_skill_body_armor = @s rimuru_switch_temp
+execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:isekai_h_k",Data:1}]}}}] rimuru_predator_random matches 11 run scoreboard players operation @s rimuru_skill_metamorph = @s rimuru_switch_temp
 # give all the remaning point if a category that won't be usable anymore to the all entity (aka)
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_dk",Data:1}]}}}] run scoreboard players operation @s rimuru_predator_aka += @s rimuru_predator_dka
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"commons_skill_bk",Data:1}]}}}] run scoreboard players operation @s rimuru_predator_aka += @s rimuru_predator_bka
