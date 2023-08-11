@@ -1,0 +1,802 @@
+{
+    "type": "origins:multiple",
+    "eat_cd": {
+        "type": "origins:cooldown",
+        "cooldown": 200,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 5
+        }
+    },
+    "h_k": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "is_isekai": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "colors": {
+        "type": "origins:model_color",
+        "red": 0,
+        "green": 0.75,
+        "blue": 1,
+        "alpha": 1,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_s_h",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:isekai_is_isekai",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "s_h": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "tcd_1": {
+        "type": "origins:cooldown",
+        "cooldown": 12000,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 2
+        }
+    },
+    "tcd_2": {
+        "type": "origins:cooldown",
+        "cooldown": 6000,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 2
+        }
+    },
+    "tcd_3": {
+        "type": "origins:cooldown",
+        "cooldown": 1200,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 2
+        }
+    },
+    "humain": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_ate_seed",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_s_h",
+                                "comparison": "==",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:trigger_cooldown",
+                                "power": "*:*_tcd_1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale reset @s"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_s_h",
+                                "change": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_ate_seed",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_demon_slime",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_s_h",
+                                "comparison": "==",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:trigger_cooldown",
+                                "power": "*:*_tcd_2"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale reset @s"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_s_h",
+                                "change": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_demon_slime",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_s_h",
+                                "comparison": "==",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:trigger_cooldown",
+                                "power": "*:*_tcd_3"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale reset @s"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_s_h",
+                                "change": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_ate_seed",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_s_h",
+                                "comparison": "==",
+                                "compare_to": 1
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:trigger_cooldown",
+                                "power": "*:*_tcd_1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:base 0.5 @s"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_s_h",
+                                "change": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_ate_seed",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_demon_slime",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_s_h",
+                                "comparison": "==",
+                                "compare_to": 1
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:trigger_cooldown",
+                                "power": "*:*_tcd_2"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:base 0.5 @s"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_s_h",
+                                "change": -1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_demon_slime",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_s_h",
+                                "comparison": "==",
+                                "compare_to": 1
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:trigger_cooldown",
+                                "power": "*:*_tcd_3"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:base 0.5 @s"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_s_h",
+                                "change": -1
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_h_k",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_tcd_1",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_tcd_2",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_tcd_3",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:flight_fa",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:switch_1_switch",
+                            "comparison": "==",
+                            "compare_to": 2
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:switch_2_switch",
+                            "comparison": "==",
+                            "compare_to": 2
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:switch_3_switch",
+                            "comparison": "==",
+                            "compare_to": 2
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:switch_4_switch",
+                            "comparison": "==",
+                            "compare_to": 2
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:switch_5_switch",
+                            "comparison": "==",
+                            "compare_to": 2
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:switch_6_switch",
+                            "comparison": "==",
+                            "compare_to": 2
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:switch_7_switch",
+                            "comparison": "==",
+                            "compare_to": 2
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:switch_8_switch",
+                            "comparison": "==",
+                            "compare_to": 2
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:switch_9_switch",
+                            "comparison": "==",
+                            "compare_to": 2
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "*:switch_10_switch",
+                            "comparison": "==",
+                            "compare_to": 2
+                        }
+                    ]
+                }
+            ]
+        },
+        "cooldown": 20,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "id": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "/execute as @a[scores={rimuru_id=0}] run function rimuru:id"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/function rimuru:new_players"
+                }
+            ]
+        },
+        "interval": 20
+    },
+    "isekai": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function rimuru:load"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power remove @s rimuru:commons_skills_pab"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power remove @s rimuru:commons_skills_pob"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power remove @s rimuru:commons_skills_sd"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power remove @s rimuru:commons_skills_md"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power remove @s rimuru:commons_skills_bd"
+                }
+            ]
+        },
+        "entity_action_added": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power remove @s rimuru:commons_skills_pab"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power remove @s rimuru:commons_skills_pob"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power remove @s rimuru:commons_skills_sd"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power remove @s rimuru:commons_skills_md"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power remove @s rimuru:commons_skills_bd"
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "rimuru:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "if_action": {
+                        "type": "origins:execute_command",
+                        "command": "scale set pehkui:base 0.5 @s"
+                    }
+                }
+            ]
+        },
+        "entity_action_respawned": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "/function rimuru:ad"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:base 0.5 @s"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/resource set @s rimuru:isekai_is_isekai 1"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/resource set @s rimuru:flight_fa 0"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/resource set @s rimuru:isekai_s_h 0"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/resource set @s rimuru:flight_wfa 0"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power remove @s rimuru:commons_skills_pab"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power remove @s rimuru:commons_skills_pob"
+                }
+            ]
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "scale reset @s"
+        }
+    },
+    "ate_seed": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "demon_slime": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "ready_demon_slime": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "evolution": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.use"
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "/item replace entity @s weapon with minecraft:air"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.player.burp"
+                },
+                {
+                    "type": "origins:trigger_cooldown",
+                    "power": "*:*_eat_cd"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_ready_demon_slime",
+                    "change": 1
+                }
+            ]
+        },
+        "cooldown": 20,
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:nether_star"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_eat_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_ready_demon_slime",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_demon_slime",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_nb_kill",
+                    "comparison": "==",
+                    "compare_to": 1000
+                }
+            ]
+        }
+    },
+    "evolution_demon_slime": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:apply_effect",
+                    "effects": [
+                        {
+                            "effect": "minecraft:slowness",
+                            "duration": 12000,
+                            "amplifier": 19
+                        },
+                        {
+                            "effect": "minecraft:weakness",
+                            "duration": 12000,
+                            "amplifier": 19
+                        },
+                        {
+                            "effect": "minecraft:blindness",
+                            "duration": 12000,
+                            "amplifier": 19
+                        },
+                        {
+                            "effect": "minecraft:resistance",
+                            "duration": 12000,
+                            "amplifier": 19
+                        },
+                        {
+                            "effect": "minecraft:mining_fatigue",
+                            "duration": 12000,
+                            "amplifier": 19
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:trigger_cooldown",
+                    "power": "*:*_tcd_1"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:base 0.5 @s"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_s_h",
+                    "change": -1
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 12000,
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "rimuru:isekai_demon_slime",
+                                "change": 1
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "rimuru:isekai_ready_demon_slime",
+                                "change": -1
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_ready_demon_slime",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "no_milk": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:milk_bucket"
+            }
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_ready_demon_slime",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "no_die": {
+        "type": "origins:prevent_death",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_ready_demon_slime",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "nb_kill": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1000,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 14,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_ate_seed",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_demon_slime",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "demon_sacrifice": {
+        "type": "origins:self_action_on_kill",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_ate_seed",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_nb_kill",
+                "change": 1
+            }
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "name": "Morph",
+    "description": "after eating a humain you have discover that you can morph in a humain form"
+}

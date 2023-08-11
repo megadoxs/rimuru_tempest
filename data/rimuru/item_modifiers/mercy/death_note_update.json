@@ -1,0 +1,70 @@
+[
+    {
+        "function": "minecraft:set_nbt",
+        "tag": "{pages:['[{\"text\":\"     How to use\",\"bold\":true},{\"text\":\"\n\nThe player that has his name clicked on will die 40 seconds later\",\"bold\":false},{\"text\":\"\n\nOnce the name is clicked, the user has 40 seconds to click on the cause of death\",\"bold\":false}]','[{\"text\":\"     How to use\",\"bold\":true},{\"text\":\"\n\nIf no cause of death is chosen, the victim dies from heart attack\",\"bold\":false},{\"text\":\"\n\nOnly players that are currently online can be selected and they will die 40 seconds later even if they disconnect\",\"bold\":false}]']}"
+    },
+    {
+        "function": "minecraft:copy_nbt",
+        "source": {
+            "type": "minecraft:storage",
+            "source": "rimuru:death_note"
+        },
+        "ops": [
+            {
+                "source": "Page1",
+                "target": "pages",
+                "op": "append"
+            }
+        ]
+    },
+    {
+        "function": "minecraft:copy_nbt",
+        "source": {
+            "type": "minecraft:storage",
+            "source": "rimuru:death_note"
+        },
+        "ops": [
+            {
+                "source": "Page2",
+                "target": "pages",
+                "op": "append"
+            }
+        ],
+        "conditions": [
+            {
+                "condition": "minecraft:entity_scores",
+                "entity": "this",
+                "scores": {
+                    "rimuru_nb_slave": {
+                        "min": 11
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "function": "minecraft:copy_nbt",
+        "source": {
+            "type": "minecraft:storage",
+            "source": "rimuru:death_note"
+        },
+        "ops": [
+            {
+                "source": "Page3",
+                "target": "pages",
+                "op": "append"
+            }
+        ],
+        "conditions": [
+            {
+                "condition": "minecraft:entity_scores",
+                "entity": "this",
+                "scores": {
+                    "rimuru_nb_slave": {
+                        "min": 21
+                    }
+                }
+            }
+        ]
+    }
+]

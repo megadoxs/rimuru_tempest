@@ -1,0 +1,104 @@
+{
+    "condition": "minecraft:any_of",
+    "terms": [
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "rimuru_predator_dka": {
+                "min": 1
+              }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "rimuru_predator_bka": {
+                "min": 1
+              }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "rimuru_predator_cska": {
+                "min": 1
+              }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "rimuru_predator_eka": {
+                "min": 1
+              }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "rimuru_predator_ska": {
+                "min": 1
+              }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "rimuru_predator_gka": {
+                "min": 1
+              }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "rimuru_predator_vka": {
+                "min": 1
+              }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "rimuru_predator_blka": {
+                "min": 1
+              }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "rimuru_predator_tka": {
+                "min": 1
+              }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "rimuru_predator_lmcka": {
+                "min": 1
+              }
+            }
+        },
+        {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "rimuru_predator_hka": {
+                "min": 1
+              }
+            }
+        }
+    ]
+}

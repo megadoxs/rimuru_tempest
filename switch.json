@@ -1,0 +1,2941 @@
+{
+    "type": "origins:multiple",
+    "usedcube": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "usedpa": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "usedpo": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "useduw": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "base_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 19,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:predator_aa",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:unique_skills_aa",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:unique_skills_config",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_nb_skill",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:gamemode",
+                        "gamemode": "spectator",
+                        "inverted": true
+                    },
+                    {
+                        "type":"origins:resource",
+                        "resource": "*:waypoints_selected",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "1_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "hud_render": {
+            "should_render": true,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:predator_aa",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_nb_skill",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:gamemode",
+                        "gamemode": "spectator",
+                        "inverted": true
+                    },
+                    {
+                        "type":"origins:resource",
+                        "resource": "*:waypoints_selected",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "2_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3,
+        "hud_render": {
+            "should_render": true,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:predator_aa",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_nb_skill",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    {
+                        "type": "origins:gamemode",
+                        "gamemode": "spectator",
+                        "inverted": true
+                    },
+                    {
+                        "type":"origins:resource",
+                        "resource": "*:waypoints_selected",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "3_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 4,
+        "hud_render": {
+            "should_render": true,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:predator_aa",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_nb_skill",
+                        "comparison": "==",
+                        "compare_to": 3
+                    },
+                    {
+                        "type": "origins:gamemode",
+                        "gamemode": "spectator",
+                        "inverted": true
+                    },
+                    {
+                        "type":"origins:resource",
+                        "resource": "*:waypoints_selected",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "4_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "hud_render": {
+            "should_render": true,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_nb_skill",
+                        "comparison": "==",
+                        "compare_to": 4
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:predator_aa",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:gamemode",
+                        "gamemode": "spectator",
+                        "inverted": true
+                    },
+                    {
+                        "type":"origins:resource",
+                        "resource": "*:waypoints_selected",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "5_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 6,
+        "hud_render": {
+            "should_render": true,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:predator_aa",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_nb_skill",
+                        "comparison": "==",
+                        "compare_to": 5
+                    },
+                    {
+                        "type": "origins:gamemode",
+                        "gamemode": "spectator",
+                        "inverted": true
+                    },
+                    {
+                        "type":"origins:resource",
+                        "resource": "*:waypoints_selected",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "6_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 7,
+        "hud_render": {
+            "should_render": true,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:predator_aa",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_nb_skill",
+                        "comparison": "==",
+                        "compare_to": 6
+                    },
+                    {
+                        "type": "origins:gamemode",
+                        "gamemode": "spectator",
+                        "inverted": true
+                    },
+                    {
+                        "type":"origins:resource",
+                        "resource": "*:waypoints_selected",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "7_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 8,
+        "hud_render": {
+            "should_render": true,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:predator_aa",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_nb_skill",
+                        "comparison": "==",
+                        "compare_to": 7
+                    },
+                    {
+                        "type": "origins:gamemode",
+                        "gamemode": "spectator",
+                        "inverted": true
+                    },
+                    {
+                        "type":"origins:resource",
+                        "resource": "*:waypoints_selected",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "8_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 9,
+        "hud_render": {
+            "should_render": true,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:predator_aa",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_nb_skill",
+                        "comparison": "==",
+                        "compare_to": 8
+                    },
+                    {
+                        "type": "origins:gamemode",
+                        "gamemode": "spectator",
+                        "inverted": true
+                    },
+                    {
+                        "type":"origins:resource",
+                        "resource": "*:waypoints_selected",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "9_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10,
+        "hud_render": {
+            "should_render": true,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:predator_aa",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_nb_skill",
+                        "comparison": "==",
+                        "compare_to": 9
+                    },
+                    {
+                        "type": "origins:gamemode",
+                        "gamemode": "spectator",
+                        "inverted": true
+                    },
+                    {
+                        "type":"origins:resource",
+                        "resource": "*:waypoints_selected",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "10_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 11,
+        "hud_render": {
+            "should_render": true,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:isekai_is_isekai",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:predator_aa",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_nb_skill",
+                        "comparison": "==",
+                        "compare_to": 10
+                    },
+                    {
+                        "type": "origins:gamemode",
+                        "gamemode": "spectator",
+                        "inverted": true
+                    },
+                    {
+                        "type":"origins:resource",
+                        "resource": "*:waypoints_selected",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "nb_skill": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 20,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "did_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "switcher": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_base_switch",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_base_switch",
+                                "change": 1
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_base_switch",
+                                        "comparison": "==",
+                                        "compare_to": 1
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "/function rimuru:resetused"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_1_switch",
+                                        "comparison": "<=",
+                                        "compare_to": 1
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 1
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_1_switch",
+                                "change": 1
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_1_switch",
+                                        "comparison": "==",
+                                        "compare_to": 2
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 1
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "/function rimuru:resetused"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_2_switch",
+                                        "comparison": "<=",
+                                        "compare_to": 2
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 2
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_2_switch",
+                                "change": 1
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_2_switch",
+                                        "comparison": "==",
+                                        "compare_to": 3
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 2
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "/function rimuru:resetused"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_3_switch",
+                                        "comparison": "<=",
+                                        "compare_to": 3
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 3
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_3_switch",
+                                "change": 1
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_3_switch",
+                                        "comparison": "==",
+                                        "compare_to": 4
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 3
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "/function rimuru:resetused"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_4_switch",
+                                        "comparison": "==",
+                                        "compare_to": 5
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 4
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "/function rimuru:resetused"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_4_switch",
+                                        "comparison": "<=",
+                                        "compare_to": 4
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 4
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_4_switch",
+                                "change": 1
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_5_switch",
+                                        "comparison": "==",
+                                        "compare_to": 6
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 5
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "/function rimuru:resetused"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_5_switch",
+                                        "comparison": "<=",
+                                        "compare_to": 5
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 5
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_5_switch",
+                                "change": 1
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_6_switch",
+                                        "comparison": "==",
+                                        "compare_to": 7
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 6
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "/function rimuru:resetused"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_6_switch",
+                                        "comparison": "<=",
+                                        "compare_to": 6
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 6
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_6_switch",
+                                "change": 1
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_7_switch",
+                                        "comparison": "==",
+                                        "compare_to": 8
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 7
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "/function rimuru:resetused"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_7_switch",
+                                        "comparison": "<=",
+                                        "compare_to": 7
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 7
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_7_switch",
+                                "change": 1
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_8_switch",
+                                        "comparison": "==",
+                                        "compare_to": 9
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 8
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "/function rimuru:resetused"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_8_switch",
+                                        "comparison": "<=",
+                                        "compare_to": 8
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 8
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_8_switch",
+                                "change": 1
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_9_switch",
+                                        "comparison": "==",
+                                        "compare_to": 10
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 9
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "/function rimuru:resetused"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_9_switch",
+                                        "comparison": "<=",
+                                        "compare_to": 9
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 9
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_9_switch",
+                                "change": 1
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_10_switch",
+                                        "comparison": "==",
+                                        "compare_to": 11
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 10
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "/function rimuru:resetused"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_10_switch",
+                                        "comparison": "<=",
+                                        "compare_to": 10
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 10
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_10_switch",
+                                "change": 1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_did_switch",
+                    "change": 1
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_did_switch",
+                        "change": -1
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:isekai_is_isekai",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:predator_aa",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:unique_skills_config",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:unique_skills_aa",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:gamemode",
+                    "gamemode": "spectator",
+                    "inverted": true
+                },
+                {
+                    "type":"origins:resource",
+                    "resource": "*:waypoints_selected",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "cooldown": 2,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "afficher": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_base_switch",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_1_switch",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_2_switch",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_3_switch",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 3
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_4_switch",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 4
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_5_switch",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_6_switch",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 6
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_7_switch",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 7
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_8_switch",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 8
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_9_switch",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 9
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_10_switch",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_nb_skill",
+                                        "comparison": "==",
+                                        "compare_to": 10
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "/title @s actionbar \"you have chosen No skill\""
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_base_switch",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_1_switch",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_2_switch",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_3_switch",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_4_switch",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_5_switch",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_6_switch",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_7_switch",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_8_switch",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_9_switch",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_10_switch",
+                                "comparison": "==",
+                                "compare_to": 1
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "/title @s actionbar \"you have chosen your Predator skill\""
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_1_switch",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:isekai_h_k",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Metamorph skill\""
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_lmck",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Body Armor skill\""
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_tk",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Paralyzing Breath skill\""
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_csk",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Poisonous Breath skill\""
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_2_switch",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:isekai_h_k",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Metamorph skill\""
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_lmck",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Body Armor skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedcube",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_tk",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Paralyzing Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpa",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_csk",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Poisonous Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpo",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_bk",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Ultrasonic Waves skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_useduw",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_2_switch",
+                        "comparison": "==",
+                        "compare_to": 3
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_lmck",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedcube",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Body Armor skill\""
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_tk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpa",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Paralyzing Breath skill\""
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_csk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpo",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Poisonous Breath skill\""
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_bk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_useduw",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Ultrasonic Waves skill\""
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_3_switch",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:isekai_h_k",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Metamorph skill\""
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_lmck",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Body Armor skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedcube",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_tk",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Paralyzing Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpa",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_csk",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Poisonous Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpo",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_bk",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Ultrasonic Waves skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_useduw",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_3_switch",
+                        "comparison": "==",
+                        "compare_to": 3
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_lmck",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedcube",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your body armor skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedcube",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_tk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpa",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Paralyzing Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpa",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_csk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpo",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Poisonous Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpo",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_bk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_useduw",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Ultrasonic Waves skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_useduw",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_3_switch",
+                        "comparison": "==",
+                        "compare_to": 4
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_tk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpa",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Paralyzing Breath skill\""
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_csk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpo",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Poisonous Breath skill\""
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_bk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_useduw",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Ultrasonic Waves skill\""
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_4_switch",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:isekai_h_k",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Metamorph skill\""
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_lmck",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Body Armor skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedcube",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_tk",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Paralyzing Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpa",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_csk",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Poisonous Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpo",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_bk",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Ultrasonic Waves skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_useduw",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_4_switch",
+                        "comparison": "==",
+                        "compare_to": 3
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_lmck",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedcube",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your body armor skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedcube",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_tk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpa",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Paralyzing Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpa",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_csk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpo",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Poisonous Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpo",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_bk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_useduw",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Ultrasonic Waves skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_useduw",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_4_switch",
+                        "comparison": "==",
+                        "compare_to": 4
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_tk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpa",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Paralyzing Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpa",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_csk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpo",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Poisonous Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpo",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_bk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_useduw",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Ultrasonic Waves skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_useduw",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_4_switch",
+                        "comparison": "==",
+                        "compare_to": 5
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_csk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpo",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Poisonous Breath skill\""
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_bk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_useduw",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Ultrasonic Waves skill\""
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_5_switch",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:isekai_h_k",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Metamorph skill\""
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_lmck",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Body Armor skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedcube",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_tk",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Paralyzing Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpa",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_csk",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Poisonous Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpo",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:commons_skills_bk",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Ultrasonic Waves skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_useduw",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_5_switch",
+                        "comparison": "==",
+                        "compare_to": 3
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_lmck",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedcube",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your body armor skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedcube",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_tk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpa",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Paralyzing Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpa",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_csk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpo",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Poisonous Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpo",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_bk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_useduw",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Ultrasonic Waves skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_useduw",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_5_switch",
+                        "comparison": "==",
+                        "compare_to": 4
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_tk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpa",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Paralyzing Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpa",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_csk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpo",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Poisonous Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpo",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_bk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_useduw",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Ultrasonic Waves skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_useduw",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_5_switch",
+                        "comparison": "==",
+                        "compare_to": 5
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_csk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_usedpo",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Poisonous Breath skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_usedpo",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_bk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_useduw",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/title @s actionbar \"you have chosen your Ultrasonic Waves skill\""
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:*_useduw",
+                                            "change": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_5_switch",
+                        "comparison": "==",
+                        "compare_to": 6
+                    },
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:commons_skills_bk",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        {
+                                            "type": "origins:resource",
+                                            "resource": "*:*_useduw",
+                                            "comparison": "==",
+                                            "compare_to": 0
+                                        }
+                                    ]
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have chosen your Ultrasonic Waves skill\""
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_did_switch",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    }
+}

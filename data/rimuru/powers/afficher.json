@@ -1,0 +1,1368 @@
+{
+    "type": "origins:multiple",
+    "great_sage_afficher2": {
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "rising_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:unique_skills_aa_bar",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "/title @s actionbar \"Exit\""
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:unique_skills_aa_bar",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:unique_skills_aaon",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        "if_action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"Turn off Auto-Analyze ability\""
+                        },
+                        "else_action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"Turn on Auto-Analyze ability\""
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:unique_skills_aa_bar",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:unique_skills_f/l",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        "if_action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"Make Auto-Analyze Finsih by the everything else category\""
+                        },
+                        "else_action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"Make Auto-Analyze start by the everything else category\""
+                        }
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:unique_skills_did_switch2",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "great_sage_afficher": {
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "rising_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:unique_skills_on/off_bar",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "/title @s actionbar \"Exit\""
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:unique_skills_on/off_bar",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:unique_skills_ton",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        "if_action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"Turn off auto-Totem ability\""
+                        },
+                        "else_action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"Turn on auto-Totem ability\""
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:unique_skills_on/off_bar",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "/title @s actionbar \"Auto-Analyze Config\""
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:unique_skills_did_switch",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "analyzing_afficher": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:unique_skills_autoa",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:if_else_list",
+                "actions": [
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 100
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"1% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 99
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"2% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 98
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"3% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 97
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"4% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 96
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"5% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 95
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"6% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 94
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"7% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 93
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"8% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 92
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"9% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 91
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"10% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 90
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"11% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 89
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"12% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 88
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"13% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 87
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"14% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 86
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"15% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 85
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"16% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 84
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"17% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 83
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"18% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 82
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"19% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 81
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"20% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 80
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"21% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 79
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"22% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 78
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"23% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 77
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"24% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 76
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"25% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 75
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"26% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 74
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"27% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 73
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"28% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 72
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"29% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 71
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"30% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 70
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"31% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 69
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"32% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 68
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"33% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 67
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"34% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 66
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"35% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 65
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"36% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 64
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"37% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 63
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"38% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 62
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"39% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 61
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"40% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 60
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"41% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 59
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"42% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 58
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"43% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 57
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"44% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 56
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"45% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 55
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"46% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 54
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"47% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 53
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"48% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 52
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"49% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 51
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"50% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 50
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"51% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 49
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"52% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 48
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"53% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 47
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"54% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 46
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"55% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 45
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"56% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 44
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"57% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 43
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"58% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 42
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"59% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 41
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"60% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 40
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"61% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 39
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"62% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 38
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"63% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 37
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"64% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 36
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"65% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 35
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"66% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 34
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"67% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 33
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"68% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 32
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"69% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 31
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"70% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 30
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"71% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 29
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"72% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 28
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"73% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 27
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"74% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 26
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"75% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 25
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"76% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 24
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"77% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 23
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"78% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 22
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"79% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 21
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"80% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 20
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"81% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 19
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"82% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 18
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"83% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 17
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"84% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 16
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"85% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 15
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"86% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 14
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"87% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 13
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"88% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 12
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"89% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 11
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"90% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 10
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"91% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 9
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"92% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 8
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"93% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 7
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"94% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 6
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"95% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 5
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"96% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 4
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"97% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 3
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"98% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 2
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"99% of your analyzing is done\""
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:predator_analyzing",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "/title @s actionbar \"Your analyzing is now done\""
+                        }
+                    }
+                ]
+            }
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:predator_analyzing",
+            "comparison": ">=",
+            "compare_to": 2
+        }
+    }
+}

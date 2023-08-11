@@ -1,0 +1,1 @@
+execute if score @s rimuru_selected = @s rimuru_name_of_skill run title @s actionbar [{"text":"said skill"}]

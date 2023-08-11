@@ -1,0 +1,71 @@
+{
+    "type": "origins:multiple",
+    "inv_lvl1": {
+        "type": "origins:inventory",
+        "container_type": "hopper",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_magiculs",
+            "comparison": "==",
+            "compare_to": 1000
+        }
+    },
+    "inv_lvl2": {
+        "type": "origins:inventory",
+        "container_type": "chest",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_magiculs",
+            "comparison": "==",
+            "compare_to": 1000
+        }
+    },
+    "inv_lvl3": {
+        "type": "origins:inventory",
+        "container_type": "double_chest",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_magiculs",
+            "comparison": "==",
+            "compare_to": 1000
+        }
+    },
+    "magiculs": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1000,
+        "hud_render": {
+            "should_render": true
+        }
+    },
+    "respawn_self": {
+        "type": "origins:prevent_death",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:clear_effect"
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:instant_health",
+                        "duration": 2,
+                        "amplifier": 10
+                    }
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_magiculs",
+                    "change": -1000
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_magiculs",
+            "comparison": "==",
+            "compare_to": 1000
+        }
+    }
+}

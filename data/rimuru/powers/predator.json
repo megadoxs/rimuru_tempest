@@ -1,0 +1,668 @@
+{
+    "type": "origins:multiple",
+    "analyer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "pa": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "power": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:command",
+                "command": "execute if score @s rimuru_predator_random matches 100",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:switch_nb_skill",
+                        "change": 1
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function rimuru:switch/give_order"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function rimuru:predator/powers"
+                    }
+                ]
+            }
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_analyzing",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "interval": 1
+    },
+    "random_analyze": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:*_analyzing",
+                                        "comparison": ">=",
+                                        "compare_to": 2
+                                    },
+                                    {
+                                        "type": "origins:command",
+                                        "command": "execute if score @s rimuru_predator_random matches 0",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:unique_skills_autoa",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "if_action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"Auto-Analyze is currently analyzing a mob\""
+                                },
+                                "else_action": {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"You are currently analyzing a mob\""
+                                }
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:unique_skills_f/l",
+                                        "comparison": "==",
+                                        "compare_to": 1
+                                    },
+                                    {
+                                        "type": "origins:command",
+                                        "command": "execute if score @s rimuru_predator_aka matches 0",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "scoreboard players set @s rimuru_predator_random 100"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "function rimuru:predator/analyze"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:resource",
+                                        "resource": "*:unique_skills_f/l",
+                                        "comparison": "==",
+                                        "compare_to": 0
+                                    },
+                                    {
+                                        "type": "origins:predicate",
+                                        "predicate": "rimuru:predator/skills"
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function rimuru:predator/random"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:command",
+                                        "command": "execute if score @s rimuru_predator_aka matches 0",
+                                        "comparison": "==",
+                                        "compare_to": 1
+                                    },
+                                    {
+                                        "type": "origins:predicate",
+                                        "predicate": "rimuru:predator/skills",
+                                        "inverted": true
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "/say lol"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "cooldown": 20,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "analyze": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "analyzing": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 101,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "active": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "predator_all": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": -1
+        },
+        "target_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "power grant @s rimuru:give_predator_colors"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "power grant @s rimuru:give_predator_auto_remove"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @s add rimuru_predator_temp"
+                }
+            ]
+        },
+        "self_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_pa",
+                    "change": 1
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "gamemode spectator"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function rimuru:predator/unlock"
+                },
+                {
+                    "type": "origins:trigger_cooldown",
+                    "power": "rimuru:predator_predator_cd"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:isekai_is_isekai",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:isekai_s_h",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:predator_predator_cd",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "target_condition": {
+            "type": "origins:command",
+            "command": "/execute if score @s[type=!#rimuru:not_alive,tag=rimuru_predator_execute] rimuru_predator_id matches 0",
+            "compare_to": 1,
+            "comparison": "=="
+        },
+        "damage_condition": {
+            "type": "origins:attacker",
+            "entity_condition": {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "item": "minecraft:air"
+                    }
+                }
+            }
+        }
+    },
+    "predator_cd": {
+        "type": "origins:cooldown",
+        "cooldown": 6000,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 3
+        }
+    },
+    "predatoring_actions": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players operation @e[tag=rimuru_predator_temp] rimuru_predator_id = @s rimuru_id"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @e remove rimuru_predator_temp"
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s as @e if score @s rimuru_predator_id = @p[gamemode=spectator] rimuru_id run function rimuru:predator/damage"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s as @e if score @s rimuru_predator_id = @p[gamemode=spectator] rimuru_id run scoreboard players operation @p[gamemode=spectator] rimuru_predator_heal = @s rimuru_predator_heal"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function rimuru:predator/heal"
+                },
+                {
+                    "type": "origins:heal",
+                    "amount": 127
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function rimuru:predator/attribute/heart"
+                },
+                {
+                    "type": "origins:heal",
+                    "amount": 4
+                }
+            ]
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_pa",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "stop_predator": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.sneak"
+        },
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function rimuru:predator/stop"
+        },
+        "cooldown": 2,
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_pa",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "pactif": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s as @e if score @s rimuru_predator_id = @p[gamemode=spectator] rimuru_id run tp @p[gamemode=spectator] @s"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute unless score @s rimuru_id = @e[limit=1] rimuru_predator_id run function rimuru:predator/stop"
+                }
+            ]
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_pa",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "execute": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function rimuru:predator/execute"
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_pa",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:isekai_is_isekai",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "prosses": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:unique_skills_autoa",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:if_else_list",
+                "actions": [
+                    {
+                        "condition": {
+                            "type": "origins:gamemode",
+                            "gamemode": "spectator"
+                        },
+                        "action": {
+                            "type": "origins:chance",
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_analyzing",
+                                "change": -1
+                            },
+                            "chance": 0.10
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:moving",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:on_block"
+                                }
+                            ]
+                        },
+                        "action": {
+                            "type": "origins:chance",
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_analyzing",
+                                "change": -1
+                            },
+                            "chance": 0.50
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:moving",
+                                            "inverted": true
+                                        },
+                                        {
+                                            "type": "origins:on_block"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:moving"
+                                        },
+                                        {
+                                            "type": "origins:on_block",
+                                            "inverted": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "action": {
+                            "type": "origins:chance",
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_analyzing",
+                                "change": -1
+                            },
+                            "chance": 0.25
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:moving"
+                                },
+                                {
+                                    "type": "origins:on_block",
+                                    "inverted": true
+                                }
+                            ]
+                        },
+                        "action": {
+                            "type": "origins:chance",
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_analyzing",
+                                "change": -1
+                            },
+                            "chance": 0.125
+                        }
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:if_else_list",
+                "actions": [
+                    {
+                        "condition": {
+                            "type": "origins:gamemode",
+                            "gamemode": "spectator"
+                        },
+                        "action": {
+                            "type": "origins:chance",
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_analyzing",
+                                "change": -1
+                            },
+                            "chance": 0.20
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:moving",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:on_block"
+                                }
+                            ]
+                        },
+                        "action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_analyzing",
+                            "change": -1
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:moving",
+                                            "inverted": true
+                                        },
+                                        {
+                                            "type": "origins:on_block"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:moving"
+                                        },
+                                        {
+                                            "type": "origins:on_block",
+                                            "inverted": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "action": {
+                            "type": "origins:chance",
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_analyzing",
+                                "change": -1
+                            },
+                            "chance": 0.5
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:moving"
+                                },
+                                {
+                                    "type": "origins:on_block",
+                                    "inverted": true
+                                }
+                            ]
+                        },
+                        "action": {
+                            "type": "origins:chance",
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_analyzing",
+                                "change": -1
+                            },
+                            "chance": 0.25
+                        }
+                    }
+                ]
+            }
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_analyzing",
+                    "comparison": ">=",
+                    "compare_to": 2
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if score @s rimuru_predator_random matches 0",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        }
+    }
+}

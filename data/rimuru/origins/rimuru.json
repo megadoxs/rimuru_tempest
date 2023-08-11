@@ -1,0 +1,19 @@
+{
+	"powers": [
+		"rimuru:ad",
+		"rimuru:waypoints",
+		"rimuru:isekai",
+		"rimuru:commons_skills",
+		"rimuru:extra_skills",
+		"rimuru:unique_skills",
+		"rimuru:predator",
+		"rimuru:switch",
+		"rimuru:ultimate_skills",
+		"rimuru:afficher"
+	],
+	"icon": "minecraft:clock",
+	"order": 97,
+	"impact": 3,
+	"name": "Rimuru Tempest",
+	"description": "An origin about Rimuru Tempest from that time I was rinarnated as a slime."
+}

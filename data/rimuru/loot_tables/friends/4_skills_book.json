@@ -1,0 +1,24 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:written_book",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 1
+                        },
+                        {
+                            "function": "set_nbt",
+                            "tag": "{rimuru_spell_book:1b,title:\"\",generation:3,HideFlags:32,author:\"\",pages:['[{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:1b}].tag.spaces\",\"entity\":\"@s\"},{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:1b}].tag.display.Name\",\"entity\":\"@s\",\"interpret\":true},{\"text\":\"\n\n\"},{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:1b}].tag.display.Lore[0]\",\"entity\":\"@s\",\"interpret\":true,\"color\":\"black\",\"bold\":false},{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:1b}].tag.line_skip\",\"entity\":\"@s\"},{\"text\":\"        Select\",\"color\":\"black\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"trigger spell_1\"}}]','[{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:2b}].tag.spaces\",\"entity\":\"@s\"},{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:2b}].tag.display.Name\",\"entity\":\"@s\",\"interpret\":true},{\"text\":\"\n\n\"},{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:2b}].tag.display.Lore[0]\",\"entity\":\"@s\",\"interpret\":true,\"color\":\"black\",\"bold\":false},{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:2b}].tag.line_skip\",\"entity\":\"@s\"},{\"text\":\"        Select\",\"color\":\"black\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"trigger spell_2\"}}]','[{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:3b}].tag.spaces\",\"entity\":\"@s\"},{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:3b}].tag.display.Name\",\"entity\":\"@s\",\"interpret\":true},{\"text\":\"\n\n\"},{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:3b}].tag.display.Lore[0]\",\"entity\":\"@s\",\"interpret\":true,\"color\":\"black\",\"bold\":false},{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:3b}].tag.line_skip\",\"entity\":\"@s\"},{\"text\":\"        Select\",\"color\":\"black\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"trigger spell_3\"}}]','[{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:4b}].tag.spaces\",\"entity\":\"@s\"},{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:4b}].tag.display.Name\",\"entity\":\"@s\",\"interpret\":true},{\"text\":\"\n\n\"},{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:4b}].tag.display.Lore[0]\",\"entity\":\"@s\",\"interpret\":true,\"color\":\"black\",\"bold\":false},{\"nbt\":\"cardinal_components.apoli:powers.Powers[{Type:\\\\\"rimuru:give_book_setting\\\\\"}].Data.Items[{Slot:4b}].tag.line_skip\",\"entity\":\"@s\"},{\"text\":\"        Select\",\"color\":\"black\",\"bold\":true,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"trigger spell_4\"}}]'],display:{Name: '{\"text\":\"Book of Vanitas\",\"color\":\"gold\",\"italic\":false,\"bold\":true}',Lore:['[{\"text\":\"Spell Book\"}]','[{\"text\":\"A book that was given to you by rimuru as a mean to use the powers he has granted you\",\"color\":\"dark_gray\"}]']}}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+scoreboard players set #hit rimuru_sticky 1

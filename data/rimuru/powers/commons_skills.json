@@ -1,0 +1,334 @@
+{
+    "type": "origins:multiple",
+    "csk": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "tk": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "bk": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "lmck": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "pobu": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "pabu": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "poisonous_breath": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "power grant @e[distance=0.1..7,gamemode=!creative,gamemode=!spectator] rimuru:give_pob"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:commons_skills_csk",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "cooldown": 10,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "paralyzing_breath": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "power grant @e[distance=0.1..7,gamemode=!creative,gamemode=!spectator] rimuru:commons_skills_pab"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:commons_skills_tk",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "cooldown": 10,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "body_armor": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": -0.75
+        },
+        "damage_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "arrow"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "generic"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "player"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "mob"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "thorns"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "thrown"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "sweetBerryBush"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "trident"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "stalagmite"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "fallingStalactite"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "fallingBlock"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "anvil"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_body_armor_activated",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "body_armor_activated": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "body_armor_activate": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "power remove @s rimuru:isekai_colors"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_body_armor_activated",
+                    "change": 1
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "power revoke @s rimuru:give_body_colors"
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 1200,
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_body_armor_activated",
+                                "change": -1
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "power grant @s rimuru:isekai_colors"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "power revoke @s rimuru:give_body_colors"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "cooldown": 10,
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_lmck",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_body_armor_activated",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:isekai_s_h",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "interval": 20
+    },
+    "ultrasonic_waves": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power grant @e[distance=50.1..100,gamemode=!creative,gamemode=!spectator] rimuru:give_sd"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power grant @e[distance=10.1..50,gamemode=!creative,gamemode=!spectator] rimuru:give_md"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/power grant @e[distance=0.1..10,gamemode=!creative,gamemode=!spectator] rimuru:give_bd"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/playsound minecraft:entity.bat.ambient player @s ~ ~ ~ 100 2"
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "/playsound minecraft:entity.bat.ambient player @s ~ ~ ~ 100 2"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 2,
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "/playsound minecraft:entity.bat.ambient player @s ~ ~ ~ 100 2"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 3,
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "/playsound minecraft:entity.bat.ambient player @s ~ ~ ~ 100 2"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 4,
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "/playsound minecraft:entity.bat.ambient player @s ~ ~ ~ 100 2"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 5,
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "/playsound minecraft:entity.bat.ambient player @s ~ ~ ~ 100 2"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 6,
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "/playsound minecraft:entity.bat.ambient player @s ~ ~ ~ 100 2"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 7,
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "/playsound minecraft:entity.bat.ambient player @s ~ ~ ~ 100 2"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 8,
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "/playsound minecraft:entity.bat.ambient player @s ~ ~ ~ 100 2"
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 9,
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "/playsound minecraft:entity.bat.ambient player @s ~ ~ ~ 100 2"
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:commons_skills_bk",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "name": "Commons Skills",
+    "description": "§f§lParalyzing Breath    §r Paralyzes all entities within 7 blocks of the user.               §f§lPoisonous Breath §r Poisons all entities within 7 blocks of the user. §f§lBody Armor        §r Reduce all physical damage that the user take.                   §f§lUltrasonic Waves    §r Emits a loud noise that hurts nearby entities."
+}

@@ -1,0 +1,1 @@
+scoreboard objectives add rimuru_thunder dummy

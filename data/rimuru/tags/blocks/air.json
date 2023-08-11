@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        "#saplings",
+        "#flowers",
+        "minecraft:air",
+        "minecraft:cave_air",
+        "minecraft:grass",
+        "minecraft:structure_void",
+        "minecraft:tall_grass",
+        "minecraft:void_air"
+    ]
+}

@@ -1,0 +1,1946 @@
+{
+    "type": "origins:multiple",
+    "af": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "mercy": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1000,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "did_switch2": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "f/l": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "autoa": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "did_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "aa_bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "hud_render": {
+            "should_render": true,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_aa",
+                "comparison": "==",
+                "compare_to": 1
+            }
+        }
+    },
+    "aaon": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "aa": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "ton": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "on/off_bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3,
+        "hud_render": {
+            "should_render": true,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_config",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_aa",
+                        "comparison": "==",
+                        "compare_to": 0
+                    }
+                ]
+            }
+        }
+    },
+    "config": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "auto_totem": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:command",
+                "command": "/execute unless entity @s[nbt={Inventory:[{Slot:-106b}]}]",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "/clear @s minecraft:totem_of_undying 1"
+                    },
+                    {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:totem_of_undying"
+                        },
+                        "preferred_slot": "offhand"
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function rx.playerdb:api/get_self"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "/data modify storage rx:io playerdb.player.data.rimuru_origin.great_sage.if_hand set from entity @s Inventory[{Slot:-106b}]"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "/data modify storage rx:io playerdb.player.data.rimuru_origin.great_sage.if_hand.Slot set value 0b"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "/data modify block -30000000 0 1602 Items append from storage rx:io playerdb.player.data.rimuru_origin.great_sage.if_hand"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "/clear @s minecraft:totem_of_undying 1"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "/item replace entity @s weapon.offhand with minecraft:totem_of_undying"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "/loot give @s mine -30000000 0 1602 minecraft:air{drop_contents:1b}"
+                    }
+                ]
+            }
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:command",
+                    "command": "/execute unless entity @s[nbt={Inventory:[{Slot:-106b,id:\"minecraft:totem_of_undying\"}]}]",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:command",
+                    "command": "/execute if entity @s[nbt={Inventory:[{id:\"minecraft:totem_of_undying\"}]}]",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_ton",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "aon/off": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_config",
+            "change": 1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:switch_base_switch",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_config",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:predator_aa",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "config_great_sage": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_on/off_bar",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_ton",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_ton",
+                                    "change": -1
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"Auto-Totem has been disabled\""
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_ton",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"Auto-Totem has been enabled\""
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_on/off_bar",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:delay",
+                        "action": {
+                            "type": "origins:change_resource",
+                            "resource": "*:*_aa",
+                            "change": 1
+                        },
+                        "ticks": 1
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_on/off_bar",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:delay",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_config",
+                                    "change": -1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_on/off_bar",
+                                    "change": -3
+                                }
+                            ]
+                        },
+                        "ticks": 1
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_on/off_bar",
+                        "comparison": "==",
+                        "compare_to": 3
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_fa",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_fa",
+                                    "change": -1
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have disabled adding players to your friend list\""
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_fa",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"you have enabled adding players to your friend list\""
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_config",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "interval": 20
+    },
+    "on/off_switch": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_did_switch",
+                    "change": 1
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_did_switch",
+                        "change": -1
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_on/off_bar",
+                        "comparison": "<=",
+                        "compare_to": 1
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_on/off_bar",
+                        "change": 1
+                    },
+                    "else_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_on/off_bar",
+                        "change": -2
+                    }
+                }
+            ]
+        },
+        "cooldown": 1,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_config",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_aa",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "aa_switch": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_did_switch2",
+                    "change": 1
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_did_switch2",
+                        "change": -1
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_aa_bar",
+                        "comparison": "<=",
+                        "compare_to": 1
+                    },
+                    "if_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_aa_bar",
+                        "change": 1
+                    },
+                    "else_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_aa_bar",
+                        "change": -2
+                    }
+                }
+            ]
+        },
+        "cooldown": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_aa",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "config_great_sage2": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_aa_bar",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_aaon",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_aaon",
+                                    "change": -1
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"Auto-Analyze has been disabled\""
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_aaon",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"Auto-Analyze has been enabled\""
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_aa_bar",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "*:*_f/l",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        "if_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_f/l",
+                                    "change": -1
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"Auto-Analyze will now end with the everything else category\""
+                                }
+                            ]
+                        },
+                        "else_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_f/l",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "/title @s actionbar \"Auto-Analyze will now start with the everything else category\""
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_aa_bar",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:delay",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_config",
+                                    "change": -1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_on/off_bar",
+                                    "change": -3
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_aa_bar",
+                                    "change": -3
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_aa",
+                                    "change": -1
+                                }
+                            ]
+                        },
+                        "ticks": 1
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_aa",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "auto_analyze": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_f/l",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_autoa",
+                        "change": 1
+                    },
+                    {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_aka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_hka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_ahk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_hka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_lmcka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_almck",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_lmcka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_bka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_abk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_bka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_dka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_adk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_dka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_eka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aek",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_eka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_cska",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_acsk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_cska",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_vka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_avk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_vka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_ska",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_ask",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_ska",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_blka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_ablk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_blka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_gka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_agk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_gka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_tka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_atk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_tka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "*:*_autoa",
+                        "change": 1
+                    },
+                    {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_hka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_ahk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_hka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_lmcka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_almck",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_lmcka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_bka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_abk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_bka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_dka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_adk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_dka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_eka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aek",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_eka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_cska",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_acsk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_cska",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_vka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_avk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_vka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_ska",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_ask",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_ska",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_blka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_ablk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_blka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_gka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_agk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_gka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_tka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_atk",
+                                            "change": 1,
+                                            "operation": "set"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_tka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:predator_aka",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyze",
+                                            "change": -100
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aka",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_aa",
+                                            "change": -1
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "*:predator_analyzing",
+                                            "change": 100
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_aaon",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:predator_analyzing",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "triggers": {
+        "type": "origins:action_over_time",
+        "interval": 5,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_dc=1..}] run function rimuru:mercy/death_cause"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_ks=1..}] run function rimuru:mercy/slave_kill"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={friends=1..}] run function rimuru:friends/list"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_fr1=1..}] run function rimuru:friends/1"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_fr2=1..}] run function rimuru:friends/2"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_fr3=1..}] run function rimuru:friends/3"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_fg=1..}] run function rimuru:friends/give"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_fr=1..}] run function rimuru:friends/remove"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_gpb=1..}] run function rimuru:friends/gpb"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_gpob=1..}] run function rimuru:friends/gpob"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_gba=1..}] run function rimuru:friends/gba"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_guw=1..}] run function rimuru:friends/guw"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_yes=1..}] run function rimuru:friends/new"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_no=1..}] run function rimuru:friends/no_new"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_yf=1..}] run function rimuru:friends/yf"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s[scores={rimuru_nf=1..}] run function rimuru:friends/nf"
+                }
+            ]
+        }
+    },
+    "death_note_trigger": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function rimuru:mercy/enable"
+        },
+        "falling_action": {
+            "type": "origins:execute_command",
+            "command": "function rimuru:mercy/reset"
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:nbt",
+                "nbt": "{rimuru_death_note:1b}"
+            }
+        }
+    },
+    "add_friend": {
+        "type": "origins:action_on_entity_use",
+        "item_condition": {
+            "type": "origins:empty"
+        },
+        "hands": [
+            "main_hand"
+        ],
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:player"
+            }
+        },
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scoreboard players operation .rimuruff rimuru_id = @s rimuru_id"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "tag @s add rimuru_h"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:if_else_list",
+                                "actions": [
+                                    {
+                                        "condition": {
+                                            "type": "origins:and",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:command",
+                                                    "command": "execute if score @s rimuru_f1 = @p[tag=rimuru_h] rimuru_id",
+                                                    "comparison": "==",
+                                                    "compare_to": 0
+                                                },
+                                                {
+                                                    "type": "origins:command",
+                                                    "command": "execute if score @s rimuru_f2 = @p[tag=rimuru_h] rimuru_id",
+                                                    "comparison": "==",
+                                                    "compare_to": 0
+                                                },
+                                                {
+                                                    "type": "origins:command",
+                                                    "command": "execute if score @s rimuru_f3 = @p[tag=rimuru_h] rimuru_id",
+                                                    "comparison": "==",
+                                                    "compare_to": 0
+                                                },
+                                                {
+                                                    "type": "origins:or",
+                                                    "conditions": [
+                                                        {
+                                                            "type": "origins:command",
+                                                            "command": "execute if score @s rimuru_f1 matches 0",
+                                                            "comparison": "==",
+                                                            "compare_to": 1
+                                                        },
+                                                        {
+                                                            "type": "origins:command",
+                                                            "command": "execute if score @s rimuru_f2 matches 0",
+                                                            "comparison": "==",
+                                                            "compare_to": 1
+                                                        },
+                                                        {
+                                                            "type": "origins:command",
+                                                            "command": "execute if score @s rimuru_f3 matches 0",
+                                                            "comparison": "==",
+                                                            "compare_to": 1
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "action": {
+                                            "type": "origins:and",
+                                            "actions": [
+                                                {
+                                                    "type": "origins:execute_command",
+                                                    "command": "tellraw @s [{\"text\":\"\\nDo you really wish to add \"},{\"selector\":\"@a[tag=rimuru_h]\"},{\"text\":\" to your friends list?\\n\\n\"},{\"text\":\"YES\",\"bold\":true,\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/trigger rimuru_yes\"}},{\"text\":\" or \"},{\"text\":\"NO\\n\",\"bold\":true,\"color\":\"dark_red\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/trigger rimuru_no\"}}]"
+                                                },
+                                                {
+                                                    "type": "origins:execute_command",
+                                                    "command": "/scoreboard players enable @s rimuru_yes"
+                                                },
+                                                {
+                                                    "type": "origins:execute_command",
+                                                    "command": "/scoreboard players enable @s rimuru_no"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "condition": {
+                                            "type": "origins:or",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:command",
+                                                    "command": "execute if score @s rimuru_f1 = @p[tag=rimuru_h] rimuru_id",
+                                                    "comparison": "==",
+                                                    "compare_to": 1
+                                                },
+                                                {
+                                                    "type": "origins:command",
+                                                    "command": "execute if score @s rimuru_f2 = @p[tag=rimuru_h] rimuru_id",
+                                                    "comparison": "==",
+                                                    "compare_to": 1
+                                                },
+                                                {
+                                                    "type": "origins:command",
+                                                    "command": "execute if score @s rimuru_f3 = @p[tag=rimuru_h] rimuru_id",
+                                                    "comparison": "==",
+                                                    "compare_to": 1
+                                                }
+                                            ]
+                                        },
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "tellraw @s [{\"selector\":\"@a[tag=rimuru_h]\"},{\"text\":\" is already friends with you\"}]"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scoreboard players operation @s rimuru_ff = .rimuruff rimuru_id"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "execute as @a[tag=rimuru_h] run tag @s remove rimuru_h"
+                            },
+                            {
+                                "type": "origins:delay",
+                                "ticks": 1000,
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/scoreboard players reset @s rimuru_yes"
+                                        },
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "/scoreboard players reset @s rimuru_no"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_af",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:command",
+                            "command": "execute if score @s rimuru_f1 matches 0",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:command",
+                            "command": "execute if score @s rimuru_f2 matches 0",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "origins:command",
+                            "command": "execute if score @s rimuru_f3 matches 0",
+                            "comparison": "==",
+                            "compare_to": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "mercyless": {
+        "type": "origins:self_action_on_kill",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_mercy",
+            "change": 1
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    }
+}

@@ -1,0 +1,11 @@
+resource set @s rimuru:switch_default 0
+resource set @s rimuru:switch_1_skill 0
+resource set @s rimuru:switch_2_skill 0
+resource set @s rimuru:switch_3_skill 0
+resource set @s rimuru:switch_4_skill 0
+resource set @s rimuru:switch_5_skill 0
+resource set @s rimuru:switch_6_skill 0
+resource set @s rimuru:switch_7_skill 0
+resource set @s rimuru:switch_8_skill 0
+resource set @s rimuru:switch_9_skill 0
+resource set @s rimuru:switch_10_skill 0
