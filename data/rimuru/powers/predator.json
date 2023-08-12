@@ -10,17 +10,21 @@
     },
     "execute_indicator": {
         "type": "origins:entity_glow",
-        "red": 1,
-        "green": 0,
-        "blue": 0,
-        "bientity_condition": {
-            "type": "origins:target_condition",
-            "condition": {
-                "type": "origins:command",
-                "command": "execute if entity @s[tag=rimuru_predator_execute]",
-                "comparison": "==",
-                "compare_to": 1
-            }
+        "red": 1.0,
+        "green": 0.0,
+        "blue": 0.0,
+        "use_teams": false,
+        "entity_condition": {
+            "type":"origins:and",
+            "conditions": [
+                {
+                    "type": "origins:living"
+                },
+                {
+                    "type": "origins:power",
+                    "power": "rimuru:give_predator_indicator"
+                }
+            ]
         }
     },
     "pa": {
