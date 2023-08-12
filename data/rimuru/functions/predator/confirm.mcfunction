@@ -10,5 +10,4 @@ execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"ri
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:predator_active",Data:10}]}}}] run scoreboard players add @s rimuru_predator_lmcka 1
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:predator_active",Data:11}]}}}] run scoreboard players add @s rimuru_predator_hka 1
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:predator_active",Data:100}]}}}] run scoreboard players add @s rimuru_predator_aka 1
-resource set @s rimuru:predator_predator_cd 10000
-function rimuru:predator/stop
+resource set @s rimuru:predator_predator_cd 100000

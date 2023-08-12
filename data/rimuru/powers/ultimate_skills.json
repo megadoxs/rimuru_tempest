@@ -35,7 +35,13 @@
         "min": 0,
         "max": 1000,
         "hud_render": {
-            "should_render": true
+            "should_render": true,
+            "condition":{
+                "type": "origins:resource",
+                "resource": "*:isekai_demon_slime",
+                "comparison": "==",
+                "compare_to": 1
+            }
         }
     },
     "respawn_self": {

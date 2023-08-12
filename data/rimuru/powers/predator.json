@@ -8,6 +8,25 @@
             "should_render": false
         }
     },
+    "execute_indicator": {
+        "type": "origins:entity_glow",
+        "red": 1.0,
+        "green": 0.0,
+        "blue": 0.0,
+        "use_teams": false,
+        "entity_condition": {
+            "type":"origins:and",
+            "conditions": [
+                {
+                    "type": "origins:living"
+                },
+                {
+                    "type": "origins:power",
+                    "power": "rimuru:give_predator_indicator"
+                }
+            ]
+        }
+    },
     "pa": {
         "type": "origins:resource",
         "min": 0,
@@ -203,11 +222,11 @@
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "power grant @s rimuru:give_predator_auto_remove"
+                    "command": "power grant @s rimuru:give_predator_victim"
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "tag @s add rimuru_predator_temp"
+                    "command": "tag @s add rimuru_predator_victim"
                 }
             ]
         },
@@ -218,10 +237,6 @@
                     "type": "origins:change_resource",
                     "resource": "*:*_pa",
                     "change": 1
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "gamemode spectator"
                 },
                 {
                     "type": "origins:execute_command",
@@ -258,7 +273,7 @@
         },
         "target_condition": {
             "type": "origins:command",
-            "command": "/execute if score @s[type=!#rimuru:not_alive,tag=rimuru_predator_execute] rimuru_predator_id matches 0",
+            "command": "/execute if entity @s[type=!#rimuru:not_alive,tag=rimuru_predator_execute] unless predicate rimuru:predator/already_predatored",
             "compare_to": 1,
             "comparison": "=="
         },
@@ -286,29 +301,16 @@
     },
     "predatoring_actions": {
         "type": "origins:action_over_time",
-        "rising_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:execute_command",
-                    "command": "scoreboard players operation @e[tag=rimuru_predator_temp] rimuru_predator_id = @s rimuru_id"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "tag @e remove rimuru_predator_temp"
-                }
-            ]
-        },
         "entity_action": {
             "type": "origins:and",
             "actions": [
                 {
                     "type": "origins:execute_command",
-                    "command": "execute at @s as @e if score @s rimuru_predator_id = @p[gamemode=spectator] rimuru_id run function rimuru:predator/damage"
+                    "command": "execute at @s as @e[tag=rimuru_predator_victim] if score @s rimuru_predator_id = @p[gamemode=spectator] rimuru_id run function rimuru:predator/damage"
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "execute at @s as @e if score @s rimuru_predator_id = @p[gamemode=spectator] rimuru_id run scoreboard players operation @p[gamemode=spectator] rimuru_predator_heal = @s rimuru_predator_heal"
+                    "command": "execute at @s as @e[tag=rimuru_predator_victim] if score @s rimuru_predator_id = @p[gamemode=spectator] rimuru_id run scoreboard players operation @p[gamemode=spectator] rimuru_predator_heal = @s rimuru_predator_heal"
                 },
                 {
                     "type": "origins:execute_command",
@@ -358,16 +360,33 @@
     },
     "pactif": {
         "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "gamemode spectator"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players operation @e[tag=rimuru_predator_victim] rimuru_predator_id = @s rimuru_id"
+                }
+            ]
+        },
         "entity_action": {
             "type": "origins:and",
             "actions": [
                 {
                     "type": "origins:execute_command",
-                    "command": "execute at @s as @e if score @s rimuru_predator_id = @p[gamemode=spectator] rimuru_id run tp @p[gamemode=spectator] @s"
+                    "command": "execute at @s as @e[tag=rimuru_predator_victim] if score @s rimuru_predator_id = @p[gamemode=spectator] rimuru_id run tp @p[gamemode=spectator] @s"
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "execute unless score @s rimuru_id = @e[limit=1] rimuru_predator_id run function rimuru:predator/stop"
+                    "command": "execute unless entity @e[tag=rimuru_predator_victim] run function rimuru:predator/stop"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute unless score @s rimuru_id = @e[limit=1,sort=nearest,tag=rimuru_predator_victim] rimuru_predator_id run function rimuru:predator/stop"
                 }
             ]
         },
