@@ -7,6 +7,37 @@
         "blue": 1,
         "alpha": 1
     },
+    "predator_victim":{
+        "type":"origins:action_over_time",
+        "entity_action":{
+            "type":"origins:and",
+            "actions":[
+                {
+                    "type": "origins:execute_command",
+                    "command": "power remove @s rimuru:give_predator_colors"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players set @s rimuru_predator_id 0"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @s remove rimuru_predator_victim"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "power remove @s rimuru:give_predator_victim"
+                }
+            ]
+        },
+        "condition":{
+            "type": "origins:command",
+            "command": "/execute at @s as @a[nbt={cardinal_components:{\"origins:origin\":{OriginLayers:[{Origin:\"rimuru:rimuru\"}]}}}] if score @s rimuru_id = @e[limit=1,sort=nearest,tag=rimuru_predator_victim] rimuru_predator_id",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "interval": 20
+    },
     "skills": {
         "type": "origins:inventory",
         "title": "Storage for powers",

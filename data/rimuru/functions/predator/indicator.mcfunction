@@ -1,1 +1,0 @@
-#some particuls effects to show that the player is below the minimum health to be exected by predator was tinking of makinf a red box around the player/entity but not sure 
