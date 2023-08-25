@@ -1,5 +1,5 @@
 tag @s add rimuru_sk
-function rimuru:trigger_reset
+function rimuru:general/trigger_reset
 item modify entity @s weapon.mainhand rimuru:mercy/death_note_death_cause
 scoreboard players set @s rimuru_lks 0
 execute if score @s rimuru_ks matches 1 as @a if score @s rimuru_id = @a[tag=rimuru_sk,limit=1] rimuru_sm1 as @a[tag=rimuru_sk] run scoreboard players operation @s rimuru_lks = @s rimuru_sm1
