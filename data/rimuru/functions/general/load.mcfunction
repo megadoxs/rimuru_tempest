@@ -9,9 +9,8 @@ scoreboard objectives add sticky_z dummy
 # waypoints related
 scoreboard objectives add rimuru_waypoints_switch dummy
 scoreboard objectives add rimuru_waypoints_use dummy
+scoreboard objectives add rimuru_waypoints_nb dummy
 scoreboard objectives add rimuru_waypoints_set dummy
-scoreboard objectives add rimuru_waypoints_id dummy
-scoreboard objectives add rimuru_waypoints_forceload dummy
 # general must be done when origin is chosen
 scoreboard objectives add rimuru_math dummy
 scoreboard players set .rimuru4 rimuru_math 4
