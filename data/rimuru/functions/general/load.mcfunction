@@ -6,15 +6,23 @@ scoreboard objectives add sticky_x dummy
 scoreboard objectives add sticky_y dummy
 scoreboard objectives add sticky_z dummy
 #waypoints related
+scoreboard objectives add rimuru_waypoints_switch dummy
+scoreboard objectives add rimuru_waypoints_use dummy
+scoreboard objectives add rimuru_waypoints_set dummy
+scoreboard objectives add rimuru_waypoints_id dummy
+scoreboard objectives add rimuru_waypoints_forceload dummy
 scoreboard objectives add wp1_x dummy
 scoreboard objectives add wp1_y dummy
 scoreboard objectives add wp1_z dummy
+scoreboard objectives add wp1_d dummy
 scoreboard objectives add wp2_x dummy
 scoreboard objectives add wp2_y dummy
 scoreboard objectives add wp2_z dummy
+scoreboard objectives add wp2_d dummy
 scoreboard objectives add wp3_x dummy
 scoreboard objectives add wp3_y dummy
 scoreboard objectives add wp3_z dummy
+scoreboard objectives add wp3_d dummy
 #general must be done when origin is chosen
 scoreboard objectives add rimuru_math dummy
 scoreboard players set .rimuru4 rimuru_math 4
@@ -133,9 +141,10 @@ scoreboard objectives add rimuru_sm29 dummy
 scoreboard objectives add rimuru_sm30 dummy
 scoreboard objectives add rimuru_dc trigger
 #switch and skill order related
-scoreboard objectives add rimuru_switch_nb dummy
 scoreboard objectives add rimuru_switch_selected dummy
 scoreboard objectives add rimuru_switch_temp dummy
+#note qu'un autre pouvoir que switch utilise un switch
+scoreboard objectives add rimuru_active_switch dummy
 #one per skill has the order the skill is in
 scoreboard objectives add rimuru_skill_great_sage dummy
 scoreboard objectives add rimuru_skill_predator dummy
