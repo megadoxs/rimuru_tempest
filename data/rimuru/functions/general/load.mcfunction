@@ -12,18 +12,6 @@ scoreboard objectives add rimuru_waypoints_use dummy
 scoreboard objectives add rimuru_waypoints_set dummy
 scoreboard objectives add rimuru_waypoints_id dummy
 scoreboard objectives add rimuru_waypoints_forceload dummy
-scoreboard objectives add wp1_x dummy
-scoreboard objectives add wp1_y dummy
-scoreboard objectives add wp1_z dummy
-scoreboard objectives add wp1_d dummy
-scoreboard objectives add wp2_x dummy
-scoreboard objectives add wp2_y dummy
-scoreboard objectives add wp2_z dummy
-scoreboard objectives add wp2_d dummy
-scoreboard objectives add wp3_x dummy
-scoreboard objectives add wp3_y dummy
-scoreboard objectives add wp3_z dummy
-scoreboard objectives add wp3_d dummy
 # general must be done when origin is chosen
 scoreboard objectives add rimuru_math dummy
 scoreboard players set .rimuru4 rimuru_math 4
