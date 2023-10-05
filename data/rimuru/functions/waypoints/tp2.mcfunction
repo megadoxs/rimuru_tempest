@@ -1,4 +1,3 @@
-summon armor_stand ~ ~ ~ {Invisible:1b,Invulnerable:1b,NoGravity:1b,Tags:["st"]}
-execute store result entity @e[tag=st,limit=1] Pos[0] double 0.001 run scoreboard players get @s wp2_x
-execute store result entity @e[tag=st,limit=1] Pos[1] double 0.001 run scoreboard players get @s wp2_y
-execute store result entity @e[tag=st,limit=1] Pos[2] double 0.001 run scoreboard players get @s wp2_z
+# first line was not verified
+$execute store result storage rimuru:$(0)_$(1)_$(2)_$(3) waypoints.nb int 1 run data get entity @s cardinal_components."apoli:powers".Powers[{Type:"rimuru:waypoints_bar"}].Data
+$function rimuru:waypoints/tp1 with storage rimuru:$(0)_$(1)_$(2)_$(3) waypoints
