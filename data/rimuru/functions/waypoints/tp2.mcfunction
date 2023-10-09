@@ -1,1 +1,1 @@
-$function rimuru:waypoints/tp with storage rimuru:$(UUID.0)_$(UUID.1)_$(UUID.2)_$(UUID.3) waypoints.$(waypoint.nb)
+$function rimuru:waypoints/tp with storage rimuru:$(UUID0)_$(UUID1)_$(UUID2)_$(UUID3) waypoints.$(waypoint_nb)
