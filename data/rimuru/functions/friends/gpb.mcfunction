@@ -2,7 +2,7 @@ tag @s add rimuru_me
 scoreboard players operation .rimuruf rimuru_id = @s rimuru_fa
 execute as @a if score @s rimuru_id = .rimuruf rimuru_id run tag @s add rimuru_f
 execute as @a if score @s rimuru_id = .rimuruf rimuru_id run scoreboard players set @s rimuru_fpb 1
-function rimuru:trigger_reset
+function rimuru:general/trigger_reset
 tellraw @s [{"text":"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"}]
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skills_tk",Data:1}]}}}] as @a if score @s rimuru_id = .rimuruf rimuru_id unless entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:give_paralyzing_breath"}]}}}] unless entity @a[tag=rimuru_f,nbt={Inventory:[{id:"minecraft:enchanted_book",tag:{Paralyzing_Breath:1b}}]}] run power grant @s rimuru:give_skill_consumation
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skills_tk",Data:1}]}}}] as @a if score @s rimuru_id = .rimuruf rimuru_id unless entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:give_paralyzing_breath"}]}}}] unless entity @a[tag=rimuru_f,nbt={Inventory:[{id:"minecraft:enchanted_book",tag:{Paralyzing_Breath:1b}}]}] run power grant @s rimuru:give_casting

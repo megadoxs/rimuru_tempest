@@ -85,7 +85,7 @@
         "type": "origins:action_over_time",
         "entity_action": {
             "type": "origins:execute_command",
-            "command": "/function rimuru:reset"
+            "command": "/function rimuru:waypoint/reset"
         },
         "interval": 2,
         "condition": {
@@ -411,7 +411,7 @@
                     "ticks": 1,
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "/function rimuru:reset"
+                        "command": "/function rimuru:waypoint/reset"
                     }
                 }
             ]
@@ -539,7 +539,7 @@
                     "ticks": 1,
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "/function rimuru:reset"
+                        "command": "/function rimuru:waypoint/reset"
                     }
                 },
                 {
@@ -945,7 +945,7 @@
                     "ticks": 1,
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "/function rimuru:reset"
+                        "command": "/function rimuru:waypoint/reset"
                     }
                 }
             ]
@@ -984,7 +984,7 @@
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "/function rimuru:reset"
+                    "command": "/function rimuru:waypoint/reset"
                 },
                 {
                     "type": "origins:execute_command",
@@ -995,7 +995,7 @@
                     "ticks": 1,
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "/function rimuru:reset"
+                        "command": "/function rimuru:waypoint/reset"
                     }
                 },
                 {
@@ -1225,7 +1225,7 @@
                     "ticks": 1,
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "/function rimuru:reset"
+                        "command": "/function rimuru:waypoint/reset"
                     }
                 }
             ]
@@ -1267,7 +1267,7 @@
                     "ticks": 1,
                     "action": {
                         "type": "origins:execute_command",
-                        "command": "/function rimuru:reset"
+                        "command": "/function rimuru:waypoint/reset"
                     }
                 },
                 {
