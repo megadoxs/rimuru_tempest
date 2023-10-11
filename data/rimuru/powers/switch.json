@@ -16,6 +16,14 @@
             "should_render": false
         }
     },
+    "active_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 20000,
+        "hud_render": {
+            "should_render": false
+        }
+    },
     "default": {
         "type": "origins:resource",
         "min": 0,

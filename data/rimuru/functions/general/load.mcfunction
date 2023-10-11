@@ -1,21 +1,17 @@
-#id system related
+# id system related
 scoreboard objectives add rimuru_id dummy
+# needs some modifications
 scoreboard players set $total rimuru_id 1
-#sticky thread related
+# sticky thread related
 scoreboard objectives add sticky_x dummy
 scoreboard objectives add sticky_y dummy
 scoreboard objectives add sticky_z dummy
-#waypoints related
-scoreboard objectives add wp1_x dummy
-scoreboard objectives add wp1_y dummy
-scoreboard objectives add wp1_z dummy
-scoreboard objectives add wp2_x dummy
-scoreboard objectives add wp2_y dummy
-scoreboard objectives add wp2_z dummy
-scoreboard objectives add wp3_x dummy
-scoreboard objectives add wp3_y dummy
-scoreboard objectives add wp3_z dummy
-#general must be done when origin is chosen
+# waypoints related
+scoreboard objectives add rimuru_waypoints_switch dummy
+scoreboard objectives add rimuru_waypoints_use dummy
+scoreboard objectives add rimuru_waypoints_nb dummy
+scoreboard objectives add rimuru_waypoints_set dummy
+# general must be done when origin is chosen
 scoreboard objectives add rimuru_math dummy
 scoreboard players set .rimuru4 rimuru_math 4
 scoreboard players set .rimuru3 rimuru_math 3
@@ -25,7 +21,7 @@ scale reset @s
 advancement revoke @s everything
 team add noDeathMessage
 team modify noDeathMessage deathMessageVisibility never
-#friend related
+# friend related
 scoreboard objectives add rimuru_friends dummy
 scoreboard objectives add rimuru_nb_friends dummy
 scoreboard objectives add rimuru_f1 dummy
@@ -63,7 +59,7 @@ scoreboard objectives add spell_4 trigger
 scoreboard objectives add book trigger
 scoreboard objectives add rimuru_death dummy
 scoreboard objectives add rimuru_spare trigger
-#yeah don't ask
+# yeah don't ask
 scoreboard objectives add death_note trigger
 scoreboard objectives add rimuru_sm dummy
 scoreboard objectives add rimuru_slave_display dummy
@@ -132,11 +128,12 @@ scoreboard objectives add rimuru_sm28 dummy
 scoreboard objectives add rimuru_sm29 dummy
 scoreboard objectives add rimuru_sm30 dummy
 scoreboard objectives add rimuru_dc trigger
-#switch and skill order related
-scoreboard objectives add rimuru_switch_nb dummy
+# switch and skill order related
 scoreboard objectives add rimuru_switch_selected dummy
 scoreboard objectives add rimuru_switch_temp dummy
-#one per skill has the order the skill is in
+# note qu'un autre pouvoir que switch utilise un switch
+scoreboard objectives add rimuru_active_switch dummy
+# one per skill has the order the skill is in
 scoreboard objectives add rimuru_skill_great_sage dummy
 scoreboard objectives add rimuru_skill_predator dummy
 scoreboard objectives add rimuru_skill_steel_strength dummy
@@ -150,12 +147,12 @@ scoreboard objectives add rimuru_skill_ultrasonic_waves dummy
 scoreboard objectives add rimuru_skill_creative_flight dummy
 scoreboard objectives add rimuru_skill_waypoints dummy
 scoreboard objectives add rimuru_skill_poisonous_breath dummy
-#predator related
+# predator related
 scoreboard objectives add predator_health dummy
 scoreboard objectives add rimuru_predator_id dummy
 scoreboard objectives add rimuru_predator_random dummy
 scoreboard objectives add rimuru_predator_fail dummy
-#still predator one per skill
+# still predator one per skill
 scoreboard objectives add rimuru_predator_dka dummy
 scoreboard objectives add rimuru_predator_bka dummy
 scoreboard objectives add rimuru_predator_cska dummy
@@ -167,15 +164,15 @@ scoreboard objectives add rimuru_predator_blka dummy
 scoreboard objectives add rimuru_predator_tka dummy
 scoreboard objectives add rimuru_predator_lmcka dummy
 scoreboard objectives add rimuru_predator_hka dummy
-#still predator for all entity that can't grant skills or already has granted one
+# still predator for all entity that can't grant skills or already has granted one
 scoreboard objectives add rimuru_predator_aka dummy
-# for the execute and particule showing in predator
+#  for the execute and particule showing in predator
 scoreboard objectives add rimuru_predator_current_health dummy
 scoreboard objectives add rimuru_predator_damage dummy
 scoreboard objectives add rimuru_predator_nb dummy
 scoreboard objectives add rimuru_predator_heal dummy
 scoreboard objectives add rimuru_health dummy
-#attribute related (given by bonus)
+# attribute related (given by bonus)
 scoreboard objectives add rimuru_bonus_health dummy
 scoreboard objectives add rimuru_bonus_speed dummy
 scoreboard objectives add rimuru_bonus_armor dummy
