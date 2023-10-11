@@ -52,147 +52,103 @@
       "bar_index": 13,
       "should_render": true,
       "condition": {
-          "type": "origins:resource",
-          "resource": "*:switch_active_switch",
-          "comparison": "==",
-          "compare_to": 1102
+        "type": "origins:resource",
+        "resource": "*:switch_active_switch",
+        "comparison": "==",
+        "compare_to": 1102
       }
     }
   },
-  "auto_off": {
-    "type": "origins:action_over_time",
+  "switch": {
+    "type": "origins:active_self",
     "entity_action": {
       "type": "origins:execute_command",
-      "command": "/function rimuru:waypoints/reset"
+      "command": "function rimuru:waypoints/switch"
     },
-    "interval": 2,
+    "key": {
+      "key": "key.origins.secondary_active"
+    },
+    "hud_render": {
+      "should_render": false
+    },
     "condition": {
       "type": "origins:and",
       "conditions": [
         {
-          "type": "origins:or",
+          "type": "origins:resource",
+          "resource": "*:switch_active_switch",
+          "comparison": ">=",
+          "compare_to": 1100
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:switch_active_switch",
+          "comparison": "<=",
+          "compare_to": 1102
+        }
+      ]
+    }
+  },
+  "action": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function rimuru:waypoints/active"
+    },
+    "hud_render": {
+      "should_render": false
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type":"origins:and",
           "conditions": [
             {
-              "type": "origins:on_block",
+              "type": "origins:on_block"
+            },
+            {
+              "type": "origins:moving",
               "inverted": true
             },
             {
-              "type": "origins:moving"
+              "type": "origins:resource",
+              "resource": "*:switch_active_switch",
+              "comparison": ">=",
+              "compare_to": 1101
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:switch_active_switch",
+              "comparison": "<=",
+              "compare_to": 1102
             }
           ]
         },
         {
-          "type": "origins:resource",
-          "resource": "*:*_selected",
-          "comparison": "==",
-          "compare_to": 1
+          "type":"origins:and",
+          "conditions": [
+            {
+              "type": "origins:command",
+              "command": "execute if score @s rimuru_switch_selected = @s rimuru_skill_waypoints",
+              "compare_to": 1,
+              "comparison": "=="
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:isekai_is_isekai",
+              "comparison": "==",
+              "compare_to": 1
+            },
+            {
+              "type": "origins:resource",
+              "resource": "*:switch_active_switch",
+              "comparison": "==",
+              "compare_to": 0
+            }
+          ]
         }
       ]
-    }
-  },
-  "ek": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 1,
-    "hud_render": {
-      "should_render": false
-    }
-  },
-  "ok": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 1,
-    "hud_render": {
-      "should_render": false
-    }
-  },
-  "ta": {
-    "type": "origins:resource",
-    "min": 0,
-    "max": 1,
-    "hud_render": {
-      "should_render": false
-    }
-  },
-  "on": {
-    "type": "origins:active_self",
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "*:*_selected",
-      "change": 1
-    },
-    "cooldown": 20,
-    "hud_render": {
-      "should_render": false
-    },
-    "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:on_block"
-        },
-        {
-          "type": "origins:moving",
-          "inverted": true
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:*_selected",
-          "comparison": "==",
-          "compare_to": 0
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:*_ek",
-          "comparison": "==",
-          "compare_to": 1
-        },
-        {
-          "type": "origins:resource",
-          "resource": "*:isekai_is_isekai",
-          "comparison": "==",
-          "compare_to": 1
-        }
-      ]
-    }
-  },
-  "cant_tp": {
-    "type": "origins:action_over_time",
-    "entity_action": {
-      "type": "origins:if_else_list",
-      "actions": [
-        {
-          "condition": {
-            "type": "origins:command",
-            "command": "/execute if entity @e[type=minecraft:armor_stand,tag=st,tag=sure]",
-            "comparison": "==",
-            "compare_to": 1
-          },
-          "action": {
-            "type": "origins:execute_command",
-            "command": "/title @s actionbar \"Teleporting canceled\""
-          }
-        },
-        {
-          "condition": {
-            "type": "origins:command",
-            "command": "/execute if entity @e[tag=st,type=minecraft:armor_stand]",
-            "comparison": "==",
-            "compare_to": 0
-          },
-          "action": {
-            "type": "origins:execute_command",
-            "command": "/title @s actionbar \"You have yet to set a location\""
-          }
-        }
-      ]
-    },
-    "interval": 1,
-    "condition": {
-      "type": "origins:resource",
-      "resource": "*:*_ta",
-      "comparison": "==",
-      "compare_to": 1
     }
   },
   "tpreset": {
@@ -202,42 +158,20 @@
       "type": "origins:and",
       "actions": [
         {
-          "type": "origins:change_resource",
-          "resource": "*:*_ok",
-          "change": 1
-        },
-        {
           "type": "origins:execute_command",
           "command": "/title @s actionbar \"Teleporting canceled\""
         }
       ]
     },
     "condition": {
-      "type": "origins:and",
+      "type": "origins:or",
       "conditions": [
         {
-          "type": "origins:resource",
-          "resource": "*:*_ta",
-          "comparison": "==",
-          "compare_to": 1
+          "type": "origins:on_block",
+          "inverted": true
         },
         {
-          "type": "origins:resource",
-          "resource": "*:*_ok",
-          "comparison": "==",
-          "compare_to": 0
-        },
-        {
-          "type": "origins:or",
-          "conditions": [
-            {
-              "type": "origins:on_block",
-              "inverted": true
-            },
-            {
-              "type": "origins:moving"
-            }
-          ]
+          "type": "origins:moving"
         }
       ]
     }
