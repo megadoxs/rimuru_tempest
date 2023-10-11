@@ -18,15 +18,15 @@ execute if score @s rimuru_predator_random matches 11 if score @s rimuru_predato
 execute if score @s rimuru_predator_random matches 1 if score @s rimuru_predator_fail matches 1 run resource set @s extra_skills_bk 2
 #give you perma bonus from analising any mob
 execute if score @s rimuru_predator_random matches 100 run loot spawn ~ ~ ~ loot rimuru:predator/bonus_fail
-execute if score @s rimuru_predator_random matches 100 store result score @s rimuru_bonus_fail run data get entity @e[nbt={Item:{tag:{bonus_fail:1b}}},limit=1] Item.Count
+execute if score @s rimuru_predator_random matches 100 store result score @s rimuru_attribute_fail run data get entity @e[nbt={Item:{tag:{bonus_fail:1b}}},limit=1] Item.Count
 execute if score @s rimuru_predator_random matches 100 run kill @e[nbt={Item:{tag:{bonus_fail:1b}}}]
-execute if score @s rimuru_predator_random matches 100 if score @s rimuru_bonus_fail matches 1 run function rimuru:predator/bonus
+execute if score @s rimuru_predator_random matches 100 if score @s rimuru_attribute_fail matches 1 run function rimuru:predator/bonus
 # tell the player that annalyzing failed
 execute unless score @s rimuru_predator_random matches 100 if score @s rimuru_predator_fail matches 2 run title @a title {"text":"Analyzing failed!","color":"gray"}
-execute if score @s rimuru_predator_random matches 100 if score @s rimuru_bonus_fail matches 2 run title @a title {"text":"Analyzing failed!","color":"gray"}
+execute if score @s rimuru_predator_random matches 100 if score @s rimuru_attribute_fail matches 2 run title @a title {"text":"Analyzing failed!","color":"gray"}
 #tell them they have maxed out all the attributes bonus
-execute if score @s rimuru_predator_random matches 100 if score @s rimuru_bonus_fail matches 3 run title @a subtitle {"text":"You unlocked all analyzing bonuses","color":"dark_red"}
-execute if score @s rimuru_predator_random matches 100 if score @s rimuru_bonus_fail matches 3 run title @a title {"text":"Good job!","color":"dark_blue"}
+execute if score @s rimuru_predator_random matches 100 if score @s rimuru_attribute_fail matches 3 run title @a subtitle {"text":"You unlocked all analyzing bonuses","color":"dark_red"}
+execute if score @s rimuru_predator_random matches 100 if score @s rimuru_attribute_fail matches 3 run title @a title {"text":"Good job!","color":"dark_blue"}
 #get avalaible spot for skill order
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:switch_nb_skill",Data:0}]}}}] run scoreboard players set @s rimuru_switch_temp 1
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:switch_nb_skill",Data:1}]}}}] run scoreboard players set @s rimuru_switch_temp 2
