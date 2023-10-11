@@ -55,10 +55,21 @@
             "command": "power grant @e[distance=0.1..7,gamemode=!creative,gamemode=!spectator] rimuru:give_pob"
         },
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:commons_skills_csk",
-            "comparison": "==",
-            "compare_to": 1
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:commons_skills_csk",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if score @s rimuru_switch_selected = @s rimuru_skill_poisonous_breath",
+                    "compare_to": 1,
+                    "comparison": "=="
+                }
+            ]
         },
         "cooldown": 10,
         "hud_render": {
@@ -72,10 +83,21 @@
             "command": "power grant @e[distance=0.1..7,gamemode=!creative,gamemode=!spectator] rimuru:commons_skills_pab"
         },
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:commons_skills_tk",
-            "comparison": "==",
-            "compare_to": 1
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:commons_skills_tk",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if score @s rimuru_switch_selected = @s rimuru_skill_paralyzing_breath",
+                    "compare_to": 1,
+                    "comparison": "=="
+                }
+            ]
         },
         "cooldown": 10,
         "hud_render": {
@@ -172,7 +194,7 @@
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "power revoke @s rimuru:give_body_colors"
+                    "command": "power grant @s rimuru:give_body_colors"
                 },
                 {
                     "type": "origins:delay",
@@ -222,6 +244,12 @@
                     "resource": "*:isekai_s_h",
                     "comparison": "==",
                     "compare_to": 1
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if score @s rimuru_switch_selected = @s rimuru_skill_body_armor",
+                    "compare_to": 1,
+                    "comparison": "=="
                 }
             ]
         },
@@ -323,10 +351,21 @@
             ]
         },
         "condition": {
-            "type": "origins:resource",
-            "resource": "*:commons_skills_bk",
-            "comparison": "==",
-            "compare_to": 1
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:commons_skills_bk",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if score @s rimuru_switch_selected = @s rimuru_skill_ultrasonic_waves",
+                    "compare_to": 1,
+                    "comparison": "=="
+                }
+            ]
         }
     },
     "name": "Commons Skills",
