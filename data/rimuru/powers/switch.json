@@ -505,6 +505,33 @@
         "entity_action": {
             "type": "origins:execute_command",
             "command": "function rimuru:switch/switcher"
+        },
+        "condition":{
+            "type":"origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_active_switch",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:gamemode",
+                    "gamemode": "survival"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:isekai_is_isekai",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_active_skill",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
         }
     }
 }

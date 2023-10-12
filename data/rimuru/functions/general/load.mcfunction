@@ -7,6 +7,7 @@ scoreboard objectives add sticky_x dummy
 scoreboard objectives add sticky_y dummy
 scoreboard objectives add sticky_z dummy
 # waypoints related
+scoreboard objectives add rimuru_active_switch dummy
 scoreboard objectives add rimuru_waypoints_switch dummy
 scoreboard objectives add rimuru_waypoints_use dummy
 scoreboard objectives add rimuru_waypoints_nb dummy

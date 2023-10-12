@@ -38,10 +38,10 @@
                     ]
                 },
                 {
-                    "condition": "minecraft:entity_scores",
+                    "condition": "minecraft:entity_properties",
                     "entity": "this",
-                    "scores": {
-                        "rimuru_waypoints_switch": 1
+                    "predicate": {
+                        "nbt": "{cardinal_components:{\"apoli:powers\":{Powers:[{Type:\"rimuru:waypoints_bar\",Data:1}]}}}"
                     }
                 }
             ]
@@ -83,10 +83,10 @@
                     ]
                 },
                 {
-                    "condition": "minecraft:entity_scores",
+                    "condition": "minecraft:entity_properties",
                     "entity": "this",
-                    "scores": {
-                        "rimuru_waypoints_switch": 2
+                    "predicate": {
+                        "nbt": "{cardinal_components:{\"apoli:powers\":{Powers:[{Type:\"rimuru:waypoints_bar\",Data:2}]}}}"
                     }
                 }
             ]
@@ -128,10 +128,10 @@
                     ]
                 },
                 {
-                    "condition": "minecraft:entity_scores",
+                    "condition": "minecraft:entity_properties",
                     "entity": "this",
-                    "scores": {
-                        "rimuru_waypoints_switch": 3
+                    "predicate": {
+                        "nbt": "{cardinal_components:{\"apoli:powers\":{Powers:[{Type:\"rimuru:waypoints_bar\",Data:3}]}}}"
                     }
                 }
             ]
