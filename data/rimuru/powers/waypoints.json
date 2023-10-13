@@ -59,6 +59,14 @@
       }
     }
   },
+  "check": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "should_render": false
+    }
+  },
   "switch": {
     "type": "origins:active_self",
     "entity_action": {
@@ -104,13 +112,6 @@
         {
           "type":"origins:and",
           "conditions": [
-            {
-              "type": "origins:on_block"
-            },
-            {
-              "type": "origins:moving",
-              "inverted": true
-            },
             {
               "type": "origins:resource",
               "resource": "*:switch_active_switch",
@@ -180,6 +181,51 @@
       ]
     }
   },
+  "tp": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "rising_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "/title @s actionbar \"§k wadawhd8awdha §r Teleporting, DO NOT MOVE §k wadawhd8awdha §\""
+        },
+        {
+          "type":"origins:delay",
+          "ticks": 200,
+          "action": {
+            "type":"origins:if_else",
+            "condition":{
+              "type": "origins:resource",
+              "resource": "*:*_check",
+              "comparison": "==",
+              "compare_to": 1
+            },
+            "if_action": {
+              "type":"origins:and",
+              "actions":[
+                {
+                  "type": "origins:execute_command",
+                  "command": "data modify storage rimuru:temp waypoint_status set value \"tp\""
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "function rimuru:waypoints/tp3"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_check",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
   "tpreset": {
     "type": "origins:action_over_time",
     "interval": 1,
@@ -189,6 +235,11 @@
         {
           "type": "origins:execute_command",
           "command": "/title @s actionbar \"Teleporting canceled\""
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "*:*_check",
+          "change": -1
         }
       ]
     },
