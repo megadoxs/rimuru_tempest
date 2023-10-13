@@ -18,7 +18,7 @@
                             "condition": "minecraft:entity_scores",
                             "entity": "this",
                             "scores": {
-                                "rimuru_bonus_health": {
+                                "rimuru_attribute_health": {
                                     "max": 19
                                 }
                             }
@@ -40,7 +40,7 @@
                             "condition": "minecraft:entity_scores",
                             "entity": "this",
                             "scores": {
-                                "rimuru_bonus_speed": {
+                                "rimuru_attribute_speed": {
                                     "max": 19
                                 }
                             }
@@ -62,7 +62,7 @@
                             "condition": "minecraft:entity_scores",
                             "entity": "this",
                             "scores": {
-                                "rimuru_bonus_armor": {
+                                "rimuru_attribute_armor": {
                                     "max": 19
                                 }
                             }
@@ -84,7 +84,7 @@
                             "condition": "minecraft:entity_scores",
                             "entity": "this",
                             "scores": {
-                                "rimuru_bonus_damage": {
+                                "rimuru_attribute_damage": {
                                     "max": 19
                                 }
                             }
