@@ -28,7 +28,6 @@ execute if score @s rimuru_predator_random matches 100 if score @s rimuru_attrib
 execute if score @s rimuru_predator_random matches 100 if score @s rimuru_attribute_fail matches 3 run title @a subtitle {"text":"You unlocked all analyzing bonuses","color":"dark_red"}
 execute if score @s rimuru_predator_random matches 100 if score @s rimuru_attribute_fail matches 3 run title @a title {"text":"Good job!","color":"dark_blue"}
 #get avalaible spot for skill order
-execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:switch_nb_skill",Data:0}]}}}] run scoreboard players set @s rimuru_switch_temp 1
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:switch_nb_skill",Data:1}]}}}] run scoreboard players set @s rimuru_switch_temp 2
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:switch_nb_skill",Data:2}]}}}] run scoreboard players set @s rimuru_switch_temp 3
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:switch_nb_skill",Data:3}]}}}] run scoreboard players set @s rimuru_switch_temp 4
@@ -41,7 +40,7 @@ execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"ri
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:switch_nb_skill",Data:10}]}}}] run scoreboard players set @s rimuru_switch_temp 11
 # for the order of the skill
 execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_dk",Data:1}]}}}] rimuru_predator_random matches 1 run scoreboard players operation @s rimuru_skill_creative_flight = @s rimuru_skill_flight
-execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"commons_skill_bk",Data:1}]}}}] rimuru_predator_random matches 2 run scoreboard players operation @s rimuru_skill_ultrasonic_waves = @s rimuru_switch_temp
+execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skills_bk",Data:1}]}}}] rimuru_predator_random matches 2 run scoreboard players operation @s rimuru_skill_ultrasonic_waves = @s rimuru_switch_temp
 execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skills_csk",Data:1}]}}}] rimuru_predator_random matches 3 run scoreboard players operation @s rimuru_skill_poisonous_breath = @s rimuru_switch_temp
 execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:waypoints_ek",Data:1}]}}}] rimuru_predator_random matches 4 run scoreboard players operation @s rimuru_skill_waypoints = @s rimuru_switch_temp
 execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_sk",Data:1}]}}}] rimuru_predator_random matches 5 run scoreboard players operation @s rimuru_skill_sticky_steel_thread = @s rimuru_switch_temp
@@ -53,7 +52,7 @@ execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_com
 execute if score @s rimuru_predator_fail matches 1 if score @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:isekai_h_k",Data:1}]}}}] rimuru_predator_random matches 11 run scoreboard players operation @s rimuru_skill_metamorph = @s rimuru_switch_temp
 # give all the remaning point if a category that won't be usable anymore to the all entity (aka)
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_dk",Data:1}]}}}] run scoreboard players operation @s rimuru_predator_aka += @s rimuru_predator_dka
-execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"commons_skill_bk",Data:1}]}}}] run scoreboard players operation @s rimuru_predator_aka += @s rimuru_predator_bka
+execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skill_bk",Data:1}]}}}] run scoreboard players operation @s rimuru_predator_aka += @s rimuru_predator_bka
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skills_csk",Data:1}]}}}] run scoreboard players operation @s rimuru_predator_aka += @s rimuru_predator_cska
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:waypoints_ek",Data:1}]}}}] run scoreboard players operation @s rimuru_predator_aka += @s rimuru_predator_eka
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_sk",Data:1}]}}}] run scoreboard players operation @s rimuru_predator_aka += @s rimuru_predator_ska
@@ -65,7 +64,7 @@ execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"ri
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:isekai_h_k",Data:1}]}}}] run scoreboard players operation @s rimuru_predator_aka += @s rimuru_predator_hka
 # reset the score to be 0 after giving the remaning score to all entity (aka)
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_dk",Data:1}]}}}] run scoreboard players set @s rimuru_predator_dka 0
-execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skill_bk",Data:1}]}}}] run scoreboard players set @s rimuru_predator_bka 0
+execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skills_bk",Data:1}]}}}] run scoreboard players set @s rimuru_predator_bka 0
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:commons_skills_csk",Data:1}]}}}] run scoreboard players set @s rimuru_predator_cska 0
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:waypoints_ek",Data:1}]}}}] run scoreboard players set @s rimuru_predator_eka 0
 execute if entity @s[nbt={cardinal_components:{"apoli:powers":{Powers:[{Type:"rimuru:extra_skills_sk",Data:1}]}}}] run scoreboard players set @s rimuru_predator_ska 0

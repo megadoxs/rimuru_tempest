@@ -16,6 +16,14 @@
             "should_render": false
         }
     },
+    "active_switch": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 20000,
+        "hud_render": {
+            "should_render": false
+        }
+    },
     "default": {
         "type": "origins:resource",
         "min": 0,
@@ -46,6 +54,12 @@
                     {
                         "type": "origins:resource",
                         "resource": "*:*_nb_skill",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_switch",
                         "comparison": "==",
                         "compare_to": 0
                     }
@@ -85,6 +99,12 @@
                         "resource": "*:*_nb_skill",
                         "comparison": "==",
                         "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_switch",
+                        "comparison": "==",
+                        "compare_to": 0
                     }
                 ]
             }
@@ -122,6 +142,12 @@
                         "resource": "*:*_nb_skill",
                         "comparison": "==",
                         "compare_to": 2
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_switch",
+                        "comparison": "==",
+                        "compare_to": 0
                     }
                 ]
             }
@@ -159,6 +185,12 @@
                         "resource": "*:*_nb_skill",
                         "comparison": "==",
                         "compare_to": 3
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_switch",
+                        "comparison": "==",
+                        "compare_to": 0
                     }
                 ]
             }
@@ -196,6 +228,12 @@
                         "resource": "*:*_nb_skill",
                         "comparison": "==",
                         "compare_to": 4
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_switch",
+                        "comparison": "==",
+                        "compare_to": 0
                     }
                 ]
             }
@@ -233,6 +271,12 @@
                         "resource": "*:*_nb_skill",
                         "comparison": "==",
                         "compare_to": 5
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_switch",
+                        "comparison": "==",
+                        "compare_to": 0
                     }
                 ]
             }
@@ -270,6 +314,12 @@
                         "resource": "*:*_nb_skill",
                         "comparison": "==",
                         "compare_to": 6
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_switch",
+                        "comparison": "==",
+                        "compare_to": 0
                     }
                 ]
             }
@@ -307,6 +357,12 @@
                         "resource": "*:*_nb_skill",
                         "comparison": "==",
                         "compare_to": 7
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_switch",
+                        "comparison": "==",
+                        "compare_to": 0
                     }
                 ]
             }
@@ -344,6 +400,12 @@
                         "resource": "*:*_nb_skill",
                         "comparison": "==",
                         "compare_to": 8
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_switch",
+                        "comparison": "==",
+                        "compare_to": 0
                     }
                 ]
             }
@@ -381,6 +443,12 @@
                         "resource": "*:*_nb_skill",
                         "comparison": "==",
                         "compare_to": 9
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_switch",
+                        "comparison": "==",
+                        "compare_to": 0
                     }
                 ]
             }
@@ -418,6 +486,12 @@
                         "resource": "*:*_nb_skill",
                         "comparison": "==",
                         "compare_to": 10
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_active_switch",
+                        "comparison": "==",
+                        "compare_to": 0
                     }
                 ]
             }
@@ -431,6 +505,33 @@
         "entity_action": {
             "type": "origins:execute_command",
             "command": "function rimuru:switch/switcher"
+        },
+        "condition":{
+            "type":"origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_active_switch",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:gamemode",
+                    "gamemode": "survival"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:isekai_is_isekai",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_active_skill",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
         }
     }
 }

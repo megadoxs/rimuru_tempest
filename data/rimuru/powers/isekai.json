@@ -355,69 +355,10 @@
                     "compare_to": 0
                 },
                 {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "type": "origins:resource",
-                            "resource": "*:switch_1_switch",
-                            "comparison": "==",
-                            "compare_to": 2
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "*:switch_2_switch",
-                            "comparison": "==",
-                            "compare_to": 2
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "*:switch_3_switch",
-                            "comparison": "==",
-                            "compare_to": 2
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "*:switch_4_switch",
-                            "comparison": "==",
-                            "compare_to": 2
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "*:switch_5_switch",
-                            "comparison": "==",
-                            "compare_to": 2
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "*:switch_6_switch",
-                            "comparison": "==",
-                            "compare_to": 2
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "*:switch_7_switch",
-                            "comparison": "==",
-                            "compare_to": 2
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "*:switch_8_switch",
-                            "comparison": "==",
-                            "compare_to": 2
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "*:switch_9_switch",
-                            "comparison": "==",
-                            "compare_to": 2
-                        },
-                        {
-                            "type": "origins:resource",
-                            "resource": "*:switch_10_switch",
-                            "comparison": "==",
-                            "compare_to": 2
-                        }
-                    ]
+                    "type": "origins:command",
+                    "command": "execute if score @s rimuru_switch_selected = @s rimuru_skill_metamorph",
+                    "compare_to": 1,
+                    "comparison": "=="
                 }
             ]
         },
@@ -446,57 +387,12 @@
     "isekai": {
         "type": "origins:action_on_callback",
         "entity_action_chosen": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:execute_command",
-                    "command": "function rimuru:general/load"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "/power remove @s rimuru:commons_skills_pab"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "/power remove @s rimuru:commons_skills_pob"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "/power remove @s rimuru:commons_skills_sd"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "/power remove @s rimuru:commons_skills_md"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "/power remove @s rimuru:commons_skills_bd"
-                }
-            ]
+            "type": "origins:execute_command",
+            "command": "function rimuru:load"
         },
         "entity_action_added": {
             "type": "origins:and",
             "actions": [
-                {
-                    "type": "origins:execute_command",
-                    "command": "/power remove @s rimuru:commons_skills_pab"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "/power remove @s rimuru:commons_skills_pob"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "/power remove @s rimuru:commons_skills_sd"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "/power remove @s rimuru:commons_skills_md"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "/power remove @s rimuru:commons_skills_bd"
-                },
                 {
                     "type": "origins:if_else",
                     "condition": {
@@ -513,8 +409,45 @@
             ]
         },
         "entity_action_respawned": {
-            "type": "origins:execute_command",
-            "command": "/function rimuru:general/death_respawn"
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function rimuru:ad"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:base 0.5 @s"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "resource set @s rimuru:isekai_is_isekai 1"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "resource set @s rimuru:flight_fa 0"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "resource set @s rimuru:isekai_s_h 0"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "resource set @s rimuru:flight_wfa 0"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players set @s rimuru_skill_great_sage 0"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players set @s rimuru_skill_predator 1"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "/function rimuru:predator/attribute/heart"
+                }
+            ]
         },
         "entity_action_lost": {
             "type": "origins:execute_command",

@@ -248,6 +248,33 @@
                         "type": "origins:resource",
                         "resource": "*:*_on/off_bar",
                         "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:delay",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_config",
+                                    "change": -1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "*:*_on/off_bar",
+                                    "change": -3
+                                }
+                            ]
+                        },
+                        "ticks": 1
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_on/off_bar",
+                        "comparison": "==",
                         "compare_to": 1
                     },
                     "action": {
@@ -301,33 +328,6 @@
                             "type": "origins:change_resource",
                             "resource": "*:*_aa",
                             "change": 1
-                        },
-                        "ticks": 1
-                    }
-                },
-                {
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "*:*_on/off_bar",
-                        "comparison": "==",
-                        "compare_to": 0
-                    },
-                    "action": {
-                        "type": "origins:delay",
-                        "action": {
-                            "type": "origins:and",
-                            "actions": [
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_config",
-                                    "change": -1
-                                },
-                                {
-                                    "type": "origins:change_resource",
-                                    "resource": "*:*_on/off_bar",
-                                    "change": -3
-                                }
-                            ]
                         },
                         "ticks": 1
                     }
