@@ -180,6 +180,10 @@ scoreboard objectives add rimuru_attribute_health dummy
 scoreboard objectives add rimuru_attribute_speed dummy
 scoreboard objectives add rimuru_attribute_armor dummy
 scoreboard objectives add rimuru_attribute_damage dummy
+scoreboard players set @s rimuru_attribute_speed 0
+scoreboard players set @s rimuru_attribute_health 0
+scoreboard players set @s rimuru_attribute_armor 0
+scoreboard players set @s rimuru_attribute_damage 0
 scoreboard objectives add rimuru_bonus dummy
 scoreboard objectives add rimuru_attribute_fail dummy
 scoreboard objectives add rimuru_modifier_health dummy

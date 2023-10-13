@@ -4,4 +4,5 @@ resource set @s rimuru:isekai_is_isekai 1
 resource set @s rimuru:flight_fa 0
 resource set @s rimuru:isekai_s_h 0
 resource set @s rimuru:flight_wfa 0
-function rimuru:predator/attribute/heart
+function rimuru:general/storage
+function rimuru:predator/placeholder1 with storage rimuru:temp
