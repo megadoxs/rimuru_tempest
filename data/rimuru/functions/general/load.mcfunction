@@ -1,7 +1,8 @@
 # id system related
 scoreboard objectives add rimuru_id dummy
 # needs some modifications
-scoreboard players set $total rimuru_id 1
+scoreboard players add $total rimuru_id 0
+execute if score $total rimuru_id matches 0 run scoreboard players set $total rimuru_id 1
 # sticky thread related
 scoreboard objectives add sticky_x dummy
 scoreboard objectives add sticky_y dummy
@@ -173,6 +174,10 @@ scoreboard objectives add rimuru_predator_damage dummy
 scoreboard objectives add rimuru_predator_nb dummy
 scoreboard objectives add rimuru_predator_heal dummy
 scoreboard objectives add rimuru_health dummy
+scoreboard players set @s rimuru_predator_nb 0
+#switch
+scoreboard objectives add rimuru_switch dummy
+scoreboard players set @s rimuru_switch 0
 #attribute related (given by bonus)
 scoreboard objectives add rimuru_attribute_health dummy
 scoreboard objectives add rimuru_attribute_speed dummy

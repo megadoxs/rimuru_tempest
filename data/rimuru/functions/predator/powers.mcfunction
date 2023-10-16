@@ -3,6 +3,7 @@ execute unless score @s rimuru_predator_random matches 100 run loot spawn ~ ~ ~ 
 execute unless score @s rimuru_predator_random matches 100 store result score @s rimuru_predator_fail run data get entity @e[nbt={Item:{tag:{skill_fail:1b}}},limit=1] Item.Count
 execute unless score @s rimuru_predator_random matches 100 run kill @e[nbt={Item:{tag:{skill_fail:1b}}}]
 execute unless score @s rimuru_predator_random matches 100 unless score @s rimuru_predator_random matches 1 if score @s rimuru_predator_fail matches 1 run resource change @s rimuru:switch_nb_skill 1
+execute unless score @s rimuru_predator_random matches 100 unless score @s rimuru_predator_random matches 1 if score @s rimuru_predator_fail matches 1 run function rimuru:switch/reset
 execute if score @s rimuru_predator_random matches 1 if score @s rimuru_predator_fail matches 1 run resource set @s extra_skills_dk 1
 execute if score @s rimuru_predator_random matches 2 if score @s rimuru_predator_fail matches 1 run resource set @s commons_skill_bk 1
 execute if score @s rimuru_predator_random matches 3 if score @s rimuru_predator_fail matches 1 run resource set @s commons_skills_csk 1

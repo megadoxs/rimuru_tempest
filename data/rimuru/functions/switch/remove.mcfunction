@@ -1,0 +1,2 @@
+$resource set @s rimuru:switch_$(skill_nb)_skill 0
+$execute store result score @s rimuru_switch_selected run data get entity @s cardinal_components."apoli:powers".Powers[{Type:"rimuru:switch_$(skill_nb)_skill"}].Data 
