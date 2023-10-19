@@ -4,4 +4,3 @@ execute as @e[type=!#rimuru:not_alive,distance=0.1..100,limit=25,tag=!rimuru_pre
 execute as @e[type=!#rimuru:not_alive,distance=0.1..100,limit=25,tag=!rimuru_predator_execute,sort=nearest] if score @s rimuru_predator_current_health <= @s rimuru_health run tag @s add rimuru_predator_execute
 execute as @e[type=!#rimuru:not_alive,distance=0.1..100,limit=25,tag=!rimuru_predator_execute,sort=nearest] if score @s rimuru_predator_current_health matches ..4 run tag @s add rimuru_predator_execute
 power grant @e[tag=rimuru_predator_execute] rimuru:give_predator_indicator
-execute as @e[tag=rimuru_predator_execute] run scoreboard players add @s rimuru_predator_id 0

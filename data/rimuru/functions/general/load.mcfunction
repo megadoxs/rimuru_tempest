@@ -151,7 +151,7 @@ scoreboard objectives add rimuru_skill_waypoints dummy
 scoreboard objectives add rimuru_skill_poisonous_breath dummy
 # predator related
 scoreboard objectives add predator_health dummy
-scoreboard objectives add rimuru_predator_id dummy
+scoreboard objectives add rimuru_predatored dummy
 scoreboard objectives add rimuru_predator_random dummy
 scoreboard objectives add rimuru_predator_fail dummy
 # still predator one per skill

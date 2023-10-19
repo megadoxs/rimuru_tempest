@@ -14,5 +14,5 @@ execute store result score @s rimuru_attribute_damage run attribute @s minecraft
 execute if score @s rimuru_bonus matches 4 run scoreboard players add @s rimuru_attribute_damage 25
 execute if score @s rimuru_bonus matches 4 run title @s subtitle {"text":"You can feel your self becoming stronger!","color":"dark_red"}
 title @s title {"text":"Analyzing successful!","color":"dark_blue"}
-function rimuru:general/storage
+function rimuru:general/get_storage
 function rimuru:predator/placeholder1 with storage rimuru:temp

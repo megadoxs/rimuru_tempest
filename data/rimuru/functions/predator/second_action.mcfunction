@@ -1,0 +1,2 @@
+$execute as @e[nbt={UUID[0]=$(predator_UUID0),UUID[1]=$(predator_UUID1),UUID[2]=$(predator_UUID2),UUID[3]=$(predator_UUID3)}] run function rimuru:predator/damage
+$scoreboard players operations @s rimuru_predator_heal = @e[nbt={UUID[0]=$(predator_UUID0),UUID[1]=$(predator_UUID1),UUID[2]=$(predator_UUID2),UUID[3]=$(predator_UUID3)}] rimuru_predator_heal

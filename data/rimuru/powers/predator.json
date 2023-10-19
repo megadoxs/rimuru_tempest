@@ -213,6 +213,24 @@
             "operation": "multiply_base",
             "value": -1
         },
+        "self_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function rimuru:general/get_storage"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_pa",
+                    "change": 1
+                },
+                {
+                    "type": "origins:trigger_cooldown",
+                    "power": "rimuru:predator_predator_cd"
+                }
+            ]
+        },
         "target_action": {
             "type": "origins:and",
             "actions": [
@@ -226,25 +244,19 @@
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "tag @s add rimuru_predator_victim"
-                }
-            ]
-        },
-        "self_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_pa",
-                    "change": 1
+                    "command": "function rimuru:predator/store_victim with storage rimuru:temp"
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "function rimuru:predator/unlock"
+                    "command": "scoreboard players set @s rimuru_predatored 1" 
                 },
                 {
-                    "type": "origins:trigger_cooldown",
-                    "power": "rimuru:predator_predator_cd"
+                    "type": "origins:execute_command",
+                    "command": "power grant @s rimuru:give_predator_colors"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "power grant @s rimuru:give_predator_victim"
                 }
             ]
         },
@@ -283,10 +295,18 @@
             ]
         },
         "target_condition": {
-            "type": "origins:command",
-            "command": "/execute if entity @s[type=!#rimuru:not_alive,tag=rimuru_predator_execute] unless predicate rimuru:predator/already_predatored",
-            "compare_to": 1,
-            "comparison": "=="
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:command",
+                    "command": "/execute if entity @s[type=!minecraft:armor_stand,tag=rimuru_predator_execute] if score @s rimuru_predatored matches 1",
+                    "compare_to": 1,
+                    "comparison": "=="
+                },
+                {
+                    "type": "origins:living"
+                }
+            ]
         },
         "damage_condition": {
             "type": "origins:attacker",
@@ -312,16 +332,37 @@
     },
     "predatoring_actions": {
         "type": "origins:action_over_time",
+        "rising_action": {
+            "type":"origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function rimuru:general/get_storage"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function rimuru:predator/get_victim with storage rimuru:temp"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function rimuru:predator/unlock with storage rimuru:temp"
+                }
+            ]
+        },
         "entity_action": {
             "type": "origins:and",
             "actions": [
                 {
                     "type": "origins:execute_command",
-                    "command": "execute at @s as @e[tag=rimuru_predator_victim] if score @s rimuru_predator_id = @p[gamemode=spectator] rimuru_id run function rimuru:predator/damage"
+                    "command": "function rimuru:general/get_storage"
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "execute at @s as @e[tag=rimuru_predator_victim] if score @s rimuru_predator_id = @p[gamemode=spectator] rimuru_id run scoreboard players operation @p[gamemode=spectator] rimuru_predator_heal = @s rimuru_predator_heal"
+                    "command": "function rimuru:predator/get_victim with storage rimuru:temp"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function rimuru:predator/second_action with storage rimuru:temp"
                 }
             ]
         },
@@ -356,32 +397,23 @@
     "pactif": {
         "type": "origins:action_over_time",
         "rising_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:execute_command",
-                    "command": "gamemode spectator"
-                },
-                {
-                    "type": "origins:execute_command",
-                    "command": "scoreboard players operation @e[tag=rimuru_predator_victim] rimuru_predator_id = @s rimuru_id"
-                }
-            ]
+            "type": "origins:execute_command",
+            "command": "gamemode spectator"
         },
         "entity_action": {
             "type": "origins:and",
             "actions": [
                 {
                     "type": "origins:execute_command",
-                    "command": "execute at @s as @e[tag=rimuru_predator_victim] if score @s rimuru_predator_id = @p[gamemode=spectator] rimuru_id run tp @p[gamemode=spectator] @s"
+                    "command": "function rimuru:general/get_storage"
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "execute unless entity @e[tag=rimuru_predator_victim] run function rimuru:predator/stop"
+                    "command": "function rimuru:predator/get_victim with storage rimuru:temp"
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "execute unless score @s rimuru_id = @e[limit=1,sort=nearest,tag=rimuru_predator_victim] rimuru_predator_id run function rimuru:predator/stop"
+                    "command": "function rimuru:predator/tick_action with storage rimuru:temp"
                 }
             ]
         },
