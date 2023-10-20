@@ -1,2 +1,2 @@
-$tp @s @e[nbt={UUID0=$(predator_UUID0),UUID1=$(predator_UUID1),UUID2=$(predator_UUID2),UUID3=$(predator_UUID3)}]
-$execute unless entity @e[nbt={UUID0=$(predator_UUID0),UUID1=$(predator_UUID1),UUID2=$(predator_UUID2),UUID3=$(predator_UUID3)}] run function rimuru:predator/stop
+$execute as @e[nbt={UUID[0]=$(predator_UUID0),UUID[1]=$(predator_UUID1),UUID[2]=$(predator_UUID2),UUID[3]=$(predator_UUID3)}] tp @e[nbt={UUID[0]=$(UUID0),UUID[1]=$(UUID1),UUID[2]=$(UUID2),UUID[3]=$(UUID3)}] @s 
+$execute unless entity @e[nbt={UUID[0]=$(predator_UUID0),UUID[1]=$(predator_UUID1),UUID[2]=$(predator_UUID2),UUID[3]=$(predator_UUID3)}] run function rimuru:predator/stop with storage rimuru:temp

@@ -299,7 +299,7 @@
             "conditions": [
                 {
                     "type": "origins:command",
-                    "command": "/execute if entity @s[type=!minecraft:armor_stand,tag=rimuru_predator_execute] if score @s rimuru_predatored matches 1",
+                    "command": "execute if entity @s[type=!minecraft:armor_stand,nbt={cardinal_components:{\"apoli:powers\":{Powers:[{Type:\"rimuru:give_predator_indicator\",}]}}}] if score @s rimuru_predatored matches 1",
                     "compare_to": 1,
                     "comparison": "=="
                 },
@@ -380,8 +380,21 @@
             "key": "key.sneak"
         },
         "entity_action": {
-            "type": "origins:execute_command",
-            "command": "function rimuru:predator/stop"
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function rimuru:general/get_storage"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function rimuru:predator/get_victim with storage rimuru:temp"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function rimuru:predator/stop with storage rimuru:temp"
+                }
+            ]
         },
         "cooldown": 2,
         "hud_render": {
@@ -429,7 +442,7 @@
         "type": "origins:action_over_time",
         "entity_action": {
             "type": "origins:execute_command",
-            "command": "function rimuru:predator/execute"
+            "command": "execute as @e[type=!#rimuru:not_alive,distance=0.1..50,limit=25,sort=nearest,nbt={cardinal_components:{\"apoli:powers\":{Powers:[{Type:\"rimuru:give_predator_indicator\",}]}}}] run function rimuru:predator/execute"
         },
         "interval": 1,
         "condition": {

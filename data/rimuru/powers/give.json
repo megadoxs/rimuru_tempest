@@ -14,10 +14,6 @@
             "actions": [
                 {
                     "type": "origins:execute_command",
-                    "command": "tag @s remove rimuru_predator_execute"
-                },
-                {
-                    "type": "origins:execute_command",
                     "command": "power remove @s rimuru:give_predator_indicator"
                 }
             ]
@@ -41,15 +37,11 @@
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "scoreboard players set @s rimuru_predator_id 0"
-                },
-                {
-                    "type": "origins:execute_command",
                     "command": "scoreboard players set @s rimuru_predator_nb 0"
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "tag @s remove rimuru_predator_victim"
+                    "command": "scoreboard players set @s rimuru_predatored 0"
                 },
                 {
                     "type": "origins:execute_command",
@@ -59,7 +51,7 @@
         },
         "condition": {
             "type": "origins:command",
-            "command": "execute at @s as @a[nbt={cardinal_components:{\"origins:origin\":{OriginLayers:[{Origin:\"rimuru:rimuru\"}]}}}] if score @s rimuru_id = @e[limit=1,sort=nearest,tag=rimuru_predator_victim] rimuru_predator_id",
+            "command": "execute if score @s rimuru_predatored matches 1",
             "comparison": "==",
             "compare_to": 0
         },
