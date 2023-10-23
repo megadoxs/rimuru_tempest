@@ -25,6 +25,12 @@
                     "power": "rimuru:give_predator_indicator"
                 }
             ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:predator_predator_cd",
+            "comparison": "==",
+            "compare_to": 0  
         }
     },
     "pa": {
@@ -299,7 +305,7 @@
             "conditions": [
                 {
                     "type": "origins:command",
-                    "command": "execute if entity @s[type=!minecraft:armor_stand,nbt={cardinal_components:{\"apoli:powers\":{Powers:[{Type:\"rimuru:give_predator_indicator\",}]}}}] if score @s rimuru_predatored matches 1",
+                    "command": "execute if entity @s[type=!minecraft:armor_stand,nbt={cardinal_components:{\"apoli:powers\":{Powers:[{Type:\"rimuru:give_predator_indicator\",}]}}}] if score @s rimuru_predatored matches 0",
                     "compare_to": 1,
                     "comparison": "=="
                 },
@@ -442,7 +448,7 @@
         "type": "origins:action_over_time",
         "entity_action": {
             "type": "origins:execute_command",
-            "command": "execute as @e[type=!#rimuru:not_alive,distance=0.1..50,limit=25,sort=nearest,nbt={cardinal_components:{\"apoli:powers\":{Powers:[{Type:\"rimuru:give_predator_indicator\",}]}}}] run function rimuru:predator/execute"
+            "command": "execute as @e[type=!#rimuru:not_alive,distance=0.1..50,limit=25,sort=nearest,nbt=!{cardinal_components:{\"apoli:powers\":{Powers:[{Type:\"rimuru:give_predator_indicator\",}]}}}] run function rimuru:predator/execute"
         },
         "interval": 1,
         "condition": {
