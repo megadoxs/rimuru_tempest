@@ -9,23 +9,42 @@
     },
     "predator_indicator": {
         "type": "origins:action_over_time",
-        "rising_action":{
+        "rising_action": {
             "type": "origins:execute_command",
             "command": "scoreboard players add @s rimuru_predatored 0"
         },
         "entity_action": {
-            "type":"origins:and",
-            "actions":[
+            "type": "origins:and",
+            "actions": [
                 {
                     "type": "origins:execute_command",
-                    "command": "function rimuru:predatotor/execute_remove"
+                    "command": "function rimuru:execute_remove"
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:command",
+                        "command": "execute if score @s rimuru_predatored matches 1 unless @a[distance=..2,nbt={origin=rimuru}] ",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "if_action": {
+                        "type":"origins:and",
+                        "actions":[
+                            {
+                                "type": "origins:execute_command",
+                                "command": "you can't run away from death"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "kill @s"
+                            }
+                        ]
+                    }
                 }
             ]
         },
         "interval": 20
-    },
-    "predator_death":{
-        "type":"origins:action_on_death"
     },
     "predator_victim": {
         "type": "origins:action_over_time",

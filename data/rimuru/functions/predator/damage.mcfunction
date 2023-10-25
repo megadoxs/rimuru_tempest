@@ -5,6 +5,8 @@ execute if score @s rimuru_predator_nb matches 0 run scoreboard players operatio
 execute if score @s rimuru_predator_nb matches 1 run scoreboard players operation @s rimuru_predator_damage /= .rimuru3 rimuru_math
 execute if score @s rimuru_predator_nb matches 2 run scoreboard players operation @s rimuru_predator_damage /= .rimuru2 rimuru_math
 scoreboard players operation @s rimuru_predator_heal = @s rimuru_predator_damage
+scoreboard players add @s rimuru_predator_nb 1
+execute if score @s rimuru_predator_nb matches 4 run function rimuru:predator/confirm
 execute if score @s rimuru_predator_damage matches 64.. run damage @s 64 rimuru:predator
 execute if score @s rimuru_predator_damage matches 64.. run scoreboard players remove @s rimuru_predator_damage 63
 execute if score @s rimuru_predator_damage matches 32.. run damage @s 32 rimuru:predator
@@ -18,5 +20,3 @@ execute if score @s rimuru_predator_damage matches 4.. run scoreboard players re
 execute if score @s rimuru_predator_damage matches 2.. run damage @s 2 rimuru:predator
 execute if score @s rimuru_predator_damage matches 2.. run scoreboard players remove @s rimuru_predator_damage 1
 damage @s 1 rimuru:predator
-scoreboard players add @s rimuru_predator_nb 1
-execute if score @s rimuru_predator_nb matches 4 run function rimuru:predator/confirm
