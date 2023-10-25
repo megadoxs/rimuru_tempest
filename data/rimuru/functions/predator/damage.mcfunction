@@ -6,7 +6,9 @@ execute if score @s rimuru_predator_nb matches 1 run scoreboard players operatio
 execute if score @s rimuru_predator_nb matches 2 run scoreboard players operation @s rimuru_predator_damage /= .rimuru2 rimuru_math
 scoreboard players operation @s rimuru_predator_heal = @s rimuru_predator_damage
 scoreboard players add @s rimuru_predator_nb 1
+# this has to be modified cause i don't want the player dying to confirm but the rimutu executing
 execute if score @s rimuru_predator_nb matches 4 run function rimuru:predator/confirm
+#
 execute if score @s rimuru_predator_damage matches 64.. run damage @s 64 rimuru:predator
 execute if score @s rimuru_predator_damage matches 64.. run scoreboard players remove @s rimuru_predator_damage 63
 execute if score @s rimuru_predator_damage matches 32.. run damage @s 32 rimuru:predator
