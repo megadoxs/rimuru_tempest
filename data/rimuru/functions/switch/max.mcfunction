@@ -1,0 +1,1 @@
+$data modify storage rimuru:$(UUID0)_$(UUID1)_$(UUID2)_$(UUID3) switch set value "remove"

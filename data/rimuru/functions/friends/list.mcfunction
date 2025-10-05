@@ -1,4 +1,4 @@
-function rimuru:trigger_reset
+function rimuru:general/trigger_reset
 scoreboard players set @s rimuru_friends 0
 scoreboard players set @s rimuru_nb_friends 0
 scoreboard players operation .rimuruf1 rimuru_id = @s rimuru_f1

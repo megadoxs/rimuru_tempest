@@ -279,6 +279,12 @@
                     "resource": "*:*_cds",
                     "comparison": "==",
                     "compare_to": 0
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if score @s rimuru_switch_selected = @s rimuru_skill_sticky_steel_thread",
+                    "compare_to": 1,
+                    "comparison": "=="
                 }
             ]
         }
@@ -368,6 +374,12 @@
                     "resource": "*:*_magic_aura",
                     "comparison": ">=",
                     "compare_to": 50
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if score @s rimuru_switch_selected = @s rimuru_skill_steel_strength",
+                    "compare_to": 1,
+                    "comparison": "=="
                 }
             ]
         }
@@ -517,6 +529,12 @@
                     "resource": "*:*_gk",
                     "comparison": "==",
                     "compare_to": 1
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute if score @s rimuru_switch_selected = @s rimuru_skill_sense_heat_source",
+                    "compare_to": 1,
+                    "comparison": "=="
                 }
             ]
         }
@@ -941,7 +959,7 @@
     "bk": {
         "type": "origins:resource",
         "min": 0,
-        "max": 1,
+        "max": 2,
         "hud_render": {
             "should_render": false
         }
@@ -1198,10 +1216,10 @@
                     "compare_to": 0
                 },
                 {
-                    "type": "origins:resource",
-                    "resource": "*:switch_3_switch",
-                    "comparison": "==",
-                    "compare_to": 0
+                    "type": "origins:command",
+                    "command": "execute if score @s rimuru_switch_selected = @s rimuru_skill_predator",
+                    "compare_to": 1,
+                    "comparison": "=="
                 }
             ]
         }
@@ -1266,10 +1284,10 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:resource",
-                    "resource": "*:switch_switch",
-                    "comparison": "==",
-                    "compare_to": 0
+                    "type": "origins:command",
+                    "command": "execute if score @s rimuru_switch_selected = @s rimuru_skill_creative_flight",
+                    "compare_to": 1,
+                    "comparison": "=="
                 },
                 {
                     "type": "origins:resource",

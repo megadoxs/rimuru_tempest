@@ -7,6 +7,76 @@
         "blue": 1,
         "alpha": 1
     },
+    "predator_indicator": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "scoreboard players add @s rimuru_predatored 0"
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function rimuru:execute_remove"
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:command",
+                        "command": "execute if score @s rimuru_predatored matches 1 unless @a[distance=..2,nbt={origin=rimuru}] ",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "if_action": {
+                        "type":"origins:and",
+                        "actions":[
+                            {
+                                "type": "origins:execute_command",
+                                "command": "you can't run away from death"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "kill @s"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "interval": 20
+    },
+    "predator_victim": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "power remove @s rimuru:give_predator_colors"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players set @s rimuru_predator_nb 0"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players set @s rimuru_predatored 0"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "power remove @s rimuru:give_predator_victim"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:command",
+            "command": "execute if score @s rimuru_predatored matches 1",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "interval": 20
+    },
     "skills": {
         "type": "origins:inventory",
         "title": "Storage for powers",
